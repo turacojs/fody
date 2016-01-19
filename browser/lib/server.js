@@ -21,14 +21,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function renderToStringApp(_ref) {
     var App = _ref.App;
     var context = _ref.context;
-    var Component = _ref.Component;
+    var View = _ref.View;
     var data = _ref.data;
 
     App = App || _App2.default;
     return (0, _server.renderToString)(_react2.default.createElement(
         App,
         { context: context },
-        _react2.default.createElement(Component, data)
+        _react2.default.createElement(View, data)
     ));
 }
 
@@ -66,7 +66,7 @@ function app(_ref2) {
         body: renderToStringApp({
             context: ctx,
             App: App,
-            Component: View,
+            View: View,
             data: data
         }),
         initialData: !initialData ? data : typeof initialData === 'function' ? initialData() : initialData, // eslint-disable-line no-nested-ternary

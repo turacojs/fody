@@ -2,9 +2,9 @@ import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import DefaultApp from './App';
 
-export function renderToStringApp({ App, context, Component, data }) {
+export function renderToStringApp({ App, context, View, data }) {
     App = App || DefaultApp;
-    return renderToString(<App context={context}><Component {...data} /></App>);
+    return renderToString(<App context={context}><View {...data} /></App>);
 }
 
 function layout(Layout, data) {
@@ -28,7 +28,7 @@ function app({ context, View, data, initialData, Html, App }) {
         body: renderToStringApp({
             context: ctx,
             App,
-            Component: View,
+            View,
             data,
         }),
         initialData: !initialData ? data : (typeof initialData === 'function' ? initialData() : initialData), // eslint-disable-line no-nested-ternary

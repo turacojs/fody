@@ -23,7 +23,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function app(_ref) {
     var App = _ref.App;
     var context = _ref.context;
-    var Component = _ref.Component;
+    var View = _ref.View;
     var data = _ref.data;
     var element = _ref.element;
 
@@ -31,14 +31,14 @@ function app(_ref) {
     return _reactDom2.default.render(_react2.default.createElement(
         App,
         { context: context },
-        _react2.default.createElement(Component, data)
+        _react2.default.createElement(View, data)
     ), element);
 }
 
 function render(_ref2) {
     var App = _ref2.App;
     var context = _ref2.context;
-    var Component = _ref2.Component;
+    var View = _ref2.View;
     var data = _ref2.data;
     var element = _ref2.element;
 
@@ -52,7 +52,7 @@ function render(_ref2) {
     return app({
         context: ctx,
         App: App,
-        Component: Component,
+        View: View,
         data: data,
         element: element
     });
