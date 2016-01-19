@@ -66,7 +66,7 @@ function app(_ref2) {
         body: renderToStringApp({
             context: ctx,
             App: App,
-            View: View,
+            Component: View,
             data: data
         }),
         initialData: !initialData ? data : typeof initialData === 'function' ? initialData() : initialData, // eslint-disable-line no-nested-ternary

@@ -28,7 +28,7 @@ function app({ context, View, data, initialData, Html, App }) {
         body: renderToStringApp({
             context: ctx,
             App,
-            View,
+            Component: View,
             data,
         }),
         initialData: !initialData ? data : (typeof initialData === 'function' ? initialData() : initialData), // eslint-disable-line no-nested-ternary
