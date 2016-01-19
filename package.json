@@ -1,6 +1,6 @@
 {
   "name": "fody",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Render in react with context and layout",
   "main": "lib/server.js",
   "jspm": {
