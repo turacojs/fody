@@ -11,9 +11,11 @@ function layout(Layout, data) {
     return <Layout {...data} />;
 }
 
-function app({ context, Component, data, initialData, Html, App }) {
+function app({ context, View, data, initialData, Html, App }) {
     const css = new Set();
-    const htmlData = data ? Object.assign({}, data) : {};
+    const htmlData = data ? Object.assign({
+        View,
+    }, data) : {};
 
     const ctx = {
         addCss: value => css.add(value),
@@ -26,14 +28,14 @@ function app({ context, Component, data, initialData, Html, App }) {
         body: renderToStringApp({
             context: ctx,
             App,
-            Component,
+            View,
             data,
         }),
         initialData: !initialData ? data : (typeof initialData === 'function' ? initialData() : initialData), // eslint-disable-line no-nested-ternary
         css: Array.from(css).join(''),
     });
 
-    return layout(Component.Layout || Html, htmlData, ctx);
+    return layout(View.Layout || Html, htmlData, ctx);
 }
 
 export default function render(options) {

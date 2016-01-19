@@ -38,14 +38,16 @@ function layout(Layout, data) {
 
 function app(_ref2) {
     var context = _ref2.context;
-    var Component = _ref2.Component;
+    var View = _ref2.View;
     var data = _ref2.data;
     var initialData = _ref2.initialData;
     var Html = _ref2.Html;
     var App = _ref2.App;
 
     var css = new Set();
-    var htmlData = data ? Object.assign({}, data) : {};
+    var htmlData = data ? Object.assign({
+        View: View
+    }, data) : {};
 
     var ctx = {
         addCss: function addCss(value) {
@@ -64,14 +66,14 @@ function app(_ref2) {
         body: renderToStringApp({
             context: ctx,
             App: App,
-            Component: Component,
+            View: View,
             data: data
         }),
         initialData: !initialData ? data : typeof initialData === 'function' ? initialData() : initialData, // eslint-disable-line no-nested-ternary
         css: Array.from(css).join('')
     });
 
-    return layout(Component.Layout || Html, htmlData, ctx);
+    return layout(View.Layout || Html, htmlData, ctx);
 }
 
 function render(options) {
