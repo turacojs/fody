@@ -1,3 +1,7 @@
+### v1.1.3
+
+- [`3fc2a8f`](https://github.com/turacojs/fody/commit/3fc2a8f045947ae4a1fefb00a766c3c9b34cc950) fix (Christophe Hurpeau)
+
 ### v1.1.2
 
 - [`6f53f1a`](https://github.com/turacojs/fody/commit/6f53f1a1d6a073fd271fbb17d674a57fe9b9daf3) View (Christophe Hurpeau)
