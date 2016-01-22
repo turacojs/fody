@@ -45,9 +45,9 @@ function app(_ref2) {
     var App = _ref2.App;
 
     var css = new Set();
-    var htmlData = data ? Object.assign({
+    var htmlData = Object.assign({
         View: View
-    }, data) : {};
+    }, data);
 
     var ctx = {
         addCss: function addCss(value) {

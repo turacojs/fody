@@ -13,9 +13,9 @@ function layout(Layout, data) {
 
 function app({ context, View, data, initialData, Html, App }) {
     const css = new Set();
-    const htmlData = data ? Object.assign({
+    const htmlData = Object.assign({
         View,
-    }, data) : {};
+    }, data);
 
     const ctx = {
         addCss: value => css.add(value),
