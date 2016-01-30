@@ -16,9 +16,16 @@ var _App = require('./App');
 
 var _App2 = _interopRequireDefault(_App);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function renderToStringApp(_ref) {
+/**
+ * @function
+ * @param
+*/function renderToStringApp(_ref) {
     var App = _ref.App;
     var context = _ref.context;
     var View = _ref.View;
@@ -32,22 +39,29 @@ function renderToStringApp(_ref) {
     ));
 }
 
-function layout(Layout, data) {
+/**
+ * @function
+ * @param Layout
+ * @param data
+*/function layout(Layout, data) {
     return _react2.default.createElement(Layout, data);
 }
 
-function app(_ref2) {
+/**
+ * @function
+ * @param
+*/function app(_ref2) {
     var context = _ref2.context;
     var View = _ref2.View;
+    var _ref2$htmlData = _ref2.htmlData;
+    var htmlData = _ref2$htmlData === undefined ? {} : _ref2$htmlData;
     var data = _ref2.data;
     var initialData = _ref2.initialData;
     var Html = _ref2.Html;
     var App = _ref2.App;
 
     var css = new Set();
-    var htmlData = Object.assign({
-        View: View
-    }, data);
+    htmlData = Object.assign(htmlData, data);
 
     var ctx = {
         addCss: function addCss(value) {
@@ -76,7 +90,10 @@ function app(_ref2) {
     return layout(View.Layout || Html, htmlData, ctx);
 }
 
-function render(options) {
+/**
+ * @function
+ * @param options
+*/function render(options) {
     return '<!doctype html>\n' + (0, _server.renderToStaticMarkup)(app(options));
 }
 //# sourceMappingURL=server.js.map

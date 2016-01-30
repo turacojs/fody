@@ -18,9 +18,16 @@ var _App = require('./App');
 
 var _App2 = _interopRequireDefault(_App);
 
+/**
+ * @function
+ * @param obj
+*/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function app(_ref) {
+/**
+ * @function
+ * @param
+*/function app(_ref) {
     var App = _ref.App;
     var context = _ref.context;
     var View = _ref.View;
@@ -35,7 +42,10 @@ function app(_ref) {
     ), element);
 }
 
-function render(_ref2) {
+/**
+ * @function
+ * @param
+*/function render(_ref2) {
     var App = _ref2.App;
     var context = _ref2.context;
     var View = _ref2.View;

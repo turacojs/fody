@@ -11,11 +11,9 @@ function layout(Layout, data) {
     return <Layout {...data} />;
 }
 
-function app({ context, View, data, initialData, Html, App }) {
+function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
     const css = new Set();
-    const htmlData = Object.assign({
-        View,
-    }, data);
+    htmlData = Object.assign(htmlData, data);
 
     const ctx = {
         addCss: value => css.add(value),
