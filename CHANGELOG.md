@@ -1,3 +1,8 @@
+### v2.0.1
+
+- [`1bbe144`](https://github.com/turacojs/fody/commit/1bbe14447cf164263577e0c0b8beb5dd33a56c2c) fix main (Christophe Hurpeau)
+
+
 ### v2.0.0
 
 - [`8316248`](https://github.com/turacojs/fody/commit/8316248b9a73507e67cec86c1c26bf969a0431dc) htmldata and springbokjs-library upgrade (Christophe Hurpeau)
