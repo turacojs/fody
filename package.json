@@ -4,7 +4,7 @@
   "description": "Render in react with context and layout",
   "main": "lib/server.js",
   "jspm": {
-    "main": "browser/lib/browser.js",
+    "main": "lib/browser.js",
     "directories": {
       "lib": "browser"
     }
