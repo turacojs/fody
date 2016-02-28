@@ -1,3 +1,7 @@
+### v2.0.2
+
+- [`8123e0c`](https://github.com/turacojs/fody/commit/8123e0cc983869bab39dfd0cfaae0de110067c66) webpack config in package.json (Christophe Hurpeau)
+
 ### v2.0.1
 
 - [`1bbe144`](https://github.com/turacojs/fody/commit/1bbe14447cf164263577e0c0b8beb5dd33a56c2c) fix main (Christophe Hurpeau)
