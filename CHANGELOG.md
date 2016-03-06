@@ -1,3 +1,7 @@
+### v3.0.0
+
+- [`bb91a49`](https://github.com/turacojs/fody/commit/bb91a49ee4bed3d0596cb68a2d8c75fc8fe4f6a2) split fody and fody-app (Christophe Hurpeau)
+
 ### v2.0.2
 
 - [`8123e0c`](https://github.com/turacojs/fody/commit/8123e0cc983869bab39dfd0cfaae0de110067c66) webpack config in package.json (Christophe Hurpeau)
