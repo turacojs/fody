@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DefaultApp from './App';
+import DefaultApp from 'fody-app';
 
 export function app({ App, context, View, data, element }) {
     App = App || DefaultApp;

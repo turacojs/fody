@@ -4,15 +4,6 @@
   "description": "Render in react with context and layout",
   "main": "lib/server.js",
   "browser": "browser/lib/browser.js",
-  "jspm": {
-    "main": "lib/browser.js",
-    "directories": {
-      "lib": "browser"
-    }
-  },
-  "webpack": {
-    "./lib/App.js": "./browser/lib/App.js"
-  },
   "scripts": {
     "test": "make test",
     "lint": "make lint",
@@ -33,9 +24,11 @@
   },
   "homepage": "https://github.com/turacojs/fody#readme",
   "devDependencies": {
-    "springbokjs-library": "^13.5.0"
+    "eslint": "^1.10.3",
+    "springbokjs-library": "^15.0.0"
   },
   "dependencies": {
+    "fody-app": "^1.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   }

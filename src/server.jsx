@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
-import DefaultApp from './App';
+import DefaultApp from 'fody-app';
 
 export function renderToStringApp({ App, context, View, data }) {
     App = App || DefaultApp;
