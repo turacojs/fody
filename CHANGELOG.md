@@ -1,3 +1,7 @@
+### v3.0.1
+
+- [`93734b4`](https://github.com/turacojs/fody/commit/93734b429ecbe57b869ebe3da303e58cb784c56e) add `addCss` and `setMeta` in browser context but they do nothing (Christophe Hurpeau)
+
 ### v3.0.0
 
 - [`bb91a49`](https://github.com/turacojs/fody/commit/bb91a49ee4bed3d0596cb68a2d8c75fc8fe4f6a2) split fody and fody-app (Christophe Hurpeau)
