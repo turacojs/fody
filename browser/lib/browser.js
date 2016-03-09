@@ -53,9 +53,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     var element = _ref2.element;
 
     var ctx = {
+        addCss: /**
+                 * @function
+                */function addCss() {},
+
         setTitle: function setTitle(value) {
             return document.title = value;
         },
+        setMeta: /**
+                  * @function
+                 */function setMeta() {},
+
         context: context
     };
 

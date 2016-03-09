@@ -9,7 +9,9 @@ export function app({ App, context, View, data, element }) {
 
 export default function render({ App, context, View, data, element }) {
     const ctx = {
+        addCss() {},
         setTitle: value => document.title = value,
+        setMeta() {},
         context,
     };
 
