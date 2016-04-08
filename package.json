@@ -1,6 +1,6 @@
 {
   "name": "fody",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Render in react with context and layout",
   "main": "lib/server.js",
   "browser": "browser/lib/browser.js",

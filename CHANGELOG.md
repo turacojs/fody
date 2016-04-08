@@ -1,3 +1,7 @@
+### v4.0.0
+
+- [`fd45aff`](https://github.com/turacojs/fody/commit/fd45aff0475d683f56f90b06522c433810fd2524) react 15 (Christophe Hurpeau)
+
 ### v3.0.1
 
 - [`93734b4`](https://github.com/turacojs/fody/commit/93734b429ecbe57b869ebe3da303e58cb784c56e) add `addCss` and `setMeta` in browser context but they do nothing (Christophe Hurpeau)
