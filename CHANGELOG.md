@@ -1,3 +1,7 @@
+### v4.1.0
+
+- [`b62cd6b`](https://github.com/turacojs/fody/commit/b62cd6bf0a4e2c9b70bf866efd5a2fc2602e3cec) add error when layout is undefined (Christophe Hurpeau)
+
 ### v4.0.0
 
 - [`fd45aff`](https://github.com/turacojs/fody/commit/fd45aff0475d683f56f90b06522c433810fd2524) react 15 (Christophe Hurpeau)
