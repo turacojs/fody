@@ -87,7 +87,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         css: Array.from(css).join('')
     });
 
-    return layout(View.Layout || Html, htmlData, ctx);
+    var Layout = View.Layout || Html;
+    if (!Layout) {
+        throw new Error('Invalid Layout');
+    }
+
+    return layout(Layout, htmlData, ctx);
 }
 
 /**

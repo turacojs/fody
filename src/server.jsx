@@ -33,7 +33,12 @@ function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
         css: Array.from(css).join(''),
     });
 
-    return layout(View.Layout || Html, htmlData, ctx);
+    const Layout = View.Layout || Html;
+    if (!Layout) {
+        throw new Error('Invalid Layout');
+    }
+
+    return layout(Layout, htmlData, ctx);
 }
 
 export default function render(options) {
