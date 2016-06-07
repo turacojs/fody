@@ -35,11 +35,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     var element = _ref.element;
 
     App = App || _fodyApp2.default;
-    return _reactDom2.default.render(_react2.default.createElement(
+    var app = _react2.default.createElement(
         App,
         { context: context },
         _react2.default.createElement(View, data)
-    ), element);
+    );
+    if (process.env.NODE_ENV !== 'production' && module.hot) {
+        var AppContainer = require('react-hot-loader').AppContainer;
+        return _reactDom2.default.render(_react2.default.createElement(
+            AppContainer,
+            null,
+            app
+        ), element);
+    } else {
+        return _reactDom2.default.render(app, element);
+    }
 }
 
 /**

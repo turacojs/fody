@@ -4,7 +4,13 @@ import DefaultApp from 'fody-app';
 
 export function app({ App, context, View, data, element }) {
     App = App || DefaultApp;
-    return ReactDOM.render(<App context={context}><View {...data} /></App>, element);
+    const app = <App context={context}><View {...data} /></App>;
+    if (process.env.NODE_ENV !== 'production' && module.hot) {
+        const AppContainer = require('react-hot-loader').AppContainer;
+        return ReactDOM.render(<AppContainer>{app}</AppContainer>, element);
+    } else {
+        return ReactDOM.render(app, element);
+    }
 }
 
 export default function render({ App, context, View, data, element }) {
