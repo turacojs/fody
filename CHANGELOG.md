@@ -1,3 +1,7 @@
+### v4.2.0
+
+- [`5654f3f`](https://github.com/turacojs/fody/commit/5654f3f3145d20164fe5bdcf4559af72c587bb06) react-hot-loader (Christophe Hurpeau)
+
 ### v4.1.0
 
 - [`b62cd6b`](https://github.com/turacojs/fody/commit/b62cd6bf0a4e2c9b70bf866efd5a2fc2602e3cec) add error when layout is undefined (Christophe Hurpeau)
