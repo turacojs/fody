@@ -2,36 +2,58 @@
   "name": "fody",
   "version": "4.2.0",
   "description": "Render in react with context and layout",
-  "main": "lib/server.js",
-  "browser": "browser/lib/browser.js",
-  "scripts": {
-    "test": "make test",
-    "lint": "make lint",
-    "build": "make build",
-    "postpublish": "make post-publish",
-    "preversion": "make pre-version",
-    "version": "make version",
-    "watch": "make watch"
-  },
-  "repository": "turacojs/fody",
   "keywords": [
     "react"
   ],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "ISC",
+  "repository": "turacojs/fody",
+  "homepage": "https://github.com/turacojs/fody#readme",
   "bugs": {
     "url": "https://github.com/turacojs/fody/issues"
   },
-  "homepage": "https://github.com/turacojs/fody#readme",
-  "devDependencies": {
-    "eslint": "^2.7.0",
-    "eslint-config-pob": "^5.0.0",
-    "springbokjs-library": "^17.0.0"
+  "main": "index.js",
+  "webpack:main": "./lib-webpack/browser.js",
+  "webpack:main-dev": "./lib-webpack-dev/browser.js",
+  "webpack:main-modern-browsers": "./lib-webpack-modern-browsers/browser.js",
+  "webpack:main-modern-browsers-dev": "./lib-webpack-modern-browsers-dev/browser.js",
+  "scripts": {
+    "build": "pob-build",
+    "build:dev": "pob-build",
+    "clean": "rm -Rf docs dist test/node6 coverage",
+    "lint": "eslint --ext .js,.jsx --fix -c .eslintrc.yml src/",
+    "prepublish": "ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit || echo",
+    "preversion": "npm run lint && npm run build && npm run build && pob-repository-check-clean",
+    "release": "pob-repository-check-clean && pob-release",
+    "version": "pob-version",
+    "watch": "pob-watch",
+    "watch:dev": "pob-watch"
   },
   "dependencies": {
-    "fody-app": "^2.0.0",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
     "react-hot-loader": "^3.0.0-beta.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.0",
+    "babel-plugin-defines": "^3.0.0",
+    "babel-plugin-discard-module-references": "^1.0.0",
+    "babel-plugin-react-require": "^2.1.0",
+    "babel-plugin-remove-dead-code": "^1.1.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-preset-es2015-node6": "^0.2.0",
+    "babel-preset-es2015-webpack": "^6.4.1",
+    "babel-preset-modern-browsers": "^5.0.2",
+    "babel-preset-modern-browsers-stage-1": "^1.0.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.5.0",
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-config-pob": "^6.1.2",
+    "eslint-plugin-import": "^1.10.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "pob-babel": "^2.0.0",
+    "pob-release": "^2.0.5"
   }
 }

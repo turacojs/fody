@@ -2,26 +2,38 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import DefaultApp from './App';
 
-export App from './App';
+import _App from './App';
+export { _App as App };
+
 
 export function app({ App, context, View, data, element }) {
     App = App || DefaultApp;
-    const app = <App context={context}><View {...data} /></App>;
+    var app = React.createElement(
+        App,
+        { context: context },
+        React.createElement(View, data)
+    );
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         // eslint-disable-next-line global-require
-        const AppContainer = require('react-hot-loader').AppContainer;
-        return ReactDOM.render(<AppContainer>{app}</AppContainer>, element);
+        var AppContainer = require('react-hot-loader').AppContainer;
+        return ReactDOM.render(React.createElement(
+            AppContainer,
+            null,
+            app
+        ), element);
     } else {
         return ReactDOM.render(app, element);
     }
 }
 
 export default function render({ App, context, View, data, element }) {
-    const ctx = {
+    var ctx = {
         addCss() {},
-        setTitle: value => document.title = value,
+        setTitle: value => {
+            return document.title = value;
+        },
         setMeta() {},
-        context,
+        context
     };
 
     return app({
@@ -29,6 +41,7 @@ export default function render({ App, context, View, data, element }) {
         App,
         View,
         data,
-        element,
+        element
     });
 }
+//# sourceMappingURL=browser.js.map

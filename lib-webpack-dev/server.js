@@ -1,56 +1,30 @@
-'use strict';
+import React from 'react';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server';
+import DefaultApp from './App';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.renderToStringApp = renderToStringApp;
-exports.default = render;
+import _App from './App';
+export { _App as App };
 
-var _react = require('react');
 
-var _react2 = _interopRequireDefault(_react);
-
-var _server = require('react-dom/server');
-
-var _fodyApp = require('fody-app');
-
-var _fodyApp2 = _interopRequireDefault(_fodyApp);
-
-/**
- * @function
- * @param obj
-*/
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @function
- * @param
-*/function renderToStringApp(_ref) {
+export function renderToStringApp(_ref) {
     var App = _ref.App;
     var context = _ref.context;
     var View = _ref.View;
     var data = _ref.data;
 
-    App = App || _fodyApp2.default;
-    return (0, _server.renderToString)(_react2.default.createElement(
+    App = App || DefaultApp;
+    return renderToString(React.createElement(
         App,
         { context: context },
-        _react2.default.createElement(View, data)
+        React.createElement(View, data)
     ));
 }
 
-/**
- * @function
- * @param Layout
- * @param data
-*/function layout(Layout, data) {
-    return _react2.default.createElement(Layout, data);
+function layout(Layout, data) {
+    return React.createElement(Layout, data);
 }
 
-/**
- * @function
- * @param
-*/function app(_ref2) {
+function app(_ref2) {
     var context = _ref2.context;
     var View = _ref2.View;
     var _ref2$htmlData = _ref2.htmlData;
@@ -83,7 +57,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             View: View,
             data: data
         }),
-        initialData: !initialData ? data : typeof initialData === 'function' ? initialData() : initialData, // eslint-disable-line no-nested-ternary
+        // eslint-disable-next-line no-nested-ternary
+        initialData: !initialData ? data : typeof initialData === 'function' ? initialData() : initialData,
         css: Array.from(css).join('')
     });
 
@@ -95,10 +70,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     return layout(Layout, htmlData, ctx);
 }
 
-/**
- * @function
- * @param options
-*/function render(options) {
-    return '<!doctype html>\n' + (0, _server.renderToStaticMarkup)(app(options));
+export default function render(options) {
+    return '<!doctype html>\n' + renderToStaticMarkup(app(options));
 }
 //# sourceMappingURL=server.js.map

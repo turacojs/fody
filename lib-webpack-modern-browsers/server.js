@@ -2,26 +2,32 @@ import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import DefaultApp from './App';
 
-export App from './App';
+import _App from './App';
+export { _App as App };
+
 
 export function renderToStringApp({ App, context, View, data }) {
     App = App || DefaultApp;
-    return renderToString(<App context={context}><View {...data} /></App>);
+    return renderToString(React.createElement(
+        App,
+        { context: context },
+        React.createElement(View, data)
+    ));
 }
 
 function layout(Layout, data) {
-    return <Layout {...data} />;
+    return React.createElement(Layout, data);
 }
 
 function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
-    const css = new Set();
+    var css = new Set();
     htmlData = Object.assign(htmlData, data);
 
-    const ctx = {
+    var ctx = {
         addCss: value => css.add(value),
         setTitle: value => htmlData.title = value,
         setMeta: (key, value) => htmlData[key] = value,
-        context,
+        context
     };
 
     Object.assign(htmlData, {
@@ -29,14 +35,14 @@ function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
             context: ctx,
             App,
             View,
-            data,
+            data
         }),
         // eslint-disable-next-line no-nested-ternary
-        initialData: !initialData ? data : (typeof initialData === 'function' ? initialData() : initialData),
-        css: Array.from(css).join(''),
+        initialData: !initialData ? data : typeof initialData === 'function' ? initialData() : initialData,
+        css: Array.from(css).join('')
     });
 
-    const Layout = View.Layout || Html;
+    var Layout = View.Layout || Html;
     if (!Layout) {
         throw new Error('Invalid Layout');
     }
@@ -45,5 +51,6 @@ function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
 }
 
 export default function render(options) {
-    return `<!doctype html>\n${renderToStaticMarkup(app(options))}`;
+    return `<!doctype html>\n${ renderToStaticMarkup(app(options)) }`;
 }
+//# sourceMappingURL=server.js.map
