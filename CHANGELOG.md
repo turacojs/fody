@@ -1,3 +1,7 @@
+### v5.0.0
+
+- [`0b11a8e`](https://github.com/turacojs/fody/commit/0b11a8e3fd2b8fe14c9ba751c90fdd8bfad54683) pob, export App, react 15.2 (Christophe Hurpeau)
+
 ### v4.2.0
 
 - [`5654f3f`](https://github.com/turacojs/fody/commit/5654f3f3145d20164fe5bdcf4559af72c587bb06) react-hot-loader (Christophe Hurpeau)
@@ -48,6 +52,3 @@
 - [`f792b8b`](https://github.com/turacojs/fody/commit/f792b8b3a58d0ce3469a07def91e84218656583d) pass View in Html (Christophe Hurpeau)
 
 ### v1.0.1
-
-
-
