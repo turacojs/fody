@@ -21,6 +21,8 @@ var _App3 = _interopRequireDefault(_App2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* global document */
+/* eslint react/no-render-return-value: "off" */
 exports.App = _App3.default;
 function app(_ref) {
     let App = _ref.App;
@@ -38,6 +40,7 @@ function app(_ref) {
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         // eslint-disable-next-line global-require
         const AppContainer = require('react-hot-loader').AppContainer;
+
         return _reactDom2.default.render(_react2.default.createElement(
             AppContainer,
             null,

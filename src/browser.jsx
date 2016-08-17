@@ -1,3 +1,5 @@
+/* global document */
+/* eslint react/no-render-return-value: "off" */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DefaultApp from './App';
@@ -10,6 +12,7 @@ export function app({ App, context, View, data, element }) {
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         // eslint-disable-next-line global-require
         const AppContainer = require('react-hot-loader').AppContainer;
+
         return ReactDOM.render(<AppContainer>{app}</AppContainer>, element);
     } else {
         return ReactDOM.render(app, element);

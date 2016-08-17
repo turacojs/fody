@@ -1,3 +1,5 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import DefaultApp from './App';
@@ -15,13 +17,18 @@ export function renderToStringApp(_ref) {
     App = App || DefaultApp;
     return renderToString(React.createElement(
         App,
-        { context: context },
-        React.createElement(View, data)
+        { context: context, __self: this
+        },
+        React.createElement(View, _extends({}, data, {
+            __self: this
+        }))
     ));
 }
 
 function layout(Layout, data) {
-    return React.createElement(Layout, data);
+    return React.createElement(Layout, _extends({}, data, {
+        __self: this
+    }));
 }
 
 function app(_ref2) {

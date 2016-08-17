@@ -4,6 +4,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.App = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 exports.renderToStringApp = renderToStringApp;
 exports.default = render;
 
@@ -29,13 +32,18 @@ function renderToStringApp(_ref) {
     App = App || _App3.default;
     return (0, _server.renderToString)(_react2.default.createElement(
         App,
-        { context: context },
-        _react2.default.createElement(View, data)
+        { context: context, __self: this
+        },
+        _react2.default.createElement(View, _extends({}, data, {
+            __self: this
+        }))
     ));
 }
 
 function layout(Layout, data) {
-    return _react2.default.createElement(Layout, data);
+    return _react2.default.createElement(Layout, _extends({}, data, {
+        __self: this
+    }));
 }
 
 function app(_ref2) {

@@ -4,6 +4,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.App = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /* global document */
+/* eslint react/no-render-return-value: "off" */
+
+
 exports.app = app;
 exports.default = render;
 
@@ -32,15 +37,21 @@ function app(_ref) {
     App = App || _App3.default;
     const app = _react2.default.createElement(
         App,
-        { context: context },
-        _react2.default.createElement(View, data)
+        { context: context, __self: this
+        },
+        _react2.default.createElement(View, _extends({}, data, {
+            __self: this
+        }))
     );
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         // eslint-disable-next-line global-require
         const AppContainer = require('react-hot-loader').AppContainer;
+
         return _reactDom2.default.render(_react2.default.createElement(
             AppContainer,
-            null,
+            {
+                __self: this
+            },
             app
         ), element);
     } else {

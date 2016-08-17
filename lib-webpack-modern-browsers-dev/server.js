@@ -1,3 +1,5 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import DefaultApp from './App';
@@ -6,20 +8,39 @@ import _App from './App';
 export { _App as App };
 
 
-export function renderToStringApp({ App, context, View, data }) {
+export function renderToStringApp(_ref) {
+    var App = _ref.App;
+    var context = _ref.context;
+    var View = _ref.View;
+    var data = _ref.data;
+
     App = App || DefaultApp;
     return renderToString(React.createElement(
         App,
-        { context: context },
-        React.createElement(View, data)
+        { context: context, __self: this
+        },
+        React.createElement(View, _extends({}, data, {
+            __self: this
+        }))
     ));
 }
 
 function layout(Layout, data) {
-    return React.createElement(Layout, data);
+    return React.createElement(Layout, _extends({}, data, {
+        __self: this
+    }));
 }
 
-function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
+function app(_ref2) {
+    var context = _ref2.context;
+    var View = _ref2.View;
+    var _ref2$htmlData = _ref2.htmlData;
+    var htmlData = _ref2$htmlData === undefined ? {} : _ref2$htmlData;
+    var data = _ref2.data;
+    var initialData = _ref2.initialData;
+    var Html = _ref2.Html;
+    var App = _ref2.App;
+
     var css = new Set();
     htmlData = Object.assign(htmlData, data);
 

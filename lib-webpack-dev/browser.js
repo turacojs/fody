@@ -1,3 +1,7 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+/* global document */
+/* eslint react/no-render-return-value: "off" */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DefaultApp from './App';
@@ -16,15 +20,21 @@ export function app(_ref) {
     App = App || DefaultApp;
     var app = React.createElement(
         App,
-        { context: context },
-        React.createElement(View, data)
+        { context: context, __self: this
+        },
+        React.createElement(View, _extends({}, data, {
+            __self: this
+        }))
     );
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         // eslint-disable-next-line global-require
         var AppContainer = require('react-hot-loader').AppContainer;
+
         return ReactDOM.render(React.createElement(
             AppContainer,
-            null,
+            {
+                __self: this
+            },
             app
         ), element);
     } else {

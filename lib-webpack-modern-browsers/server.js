@@ -6,7 +6,12 @@ import _App from './App';
 export { _App as App };
 
 
-export function renderToStringApp({ App, context, View, data }) {
+export function renderToStringApp(_ref) {
+    var App = _ref.App;
+    var context = _ref.context;
+    var View = _ref.View;
+    var data = _ref.data;
+
     App = App || DefaultApp;
     return renderToString(React.createElement(
         App,
@@ -19,7 +24,16 @@ function layout(Layout, data) {
     return React.createElement(Layout, data);
 }
 
-function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
+function app(_ref2) {
+    var context = _ref2.context;
+    var View = _ref2.View;
+    var _ref2$htmlData = _ref2.htmlData;
+    var htmlData = _ref2$htmlData === undefined ? {} : _ref2$htmlData;
+    var data = _ref2.data;
+    var initialData = _ref2.initialData;
+    var Html = _ref2.Html;
+    var App = _ref2.App;
+
     var css = new Set();
     htmlData = Object.assign(htmlData, data);
 
