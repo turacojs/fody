@@ -1,3 +1,7 @@
+### v5.1.0
+
+- [`5548e74`](https://github.com/turacojs/fody/commit/5548e7471adce1b8c3b1379aa248e7ea2a043668) update dependencies (Christophe Hurpeau)
+
 ### v5.0.0
 
 - [`0b11a8e`](https://github.com/turacojs/fody/commit/0b11a8e3fd2b8fe14c9ba751c90fdd8bfad54683) pob, export App, react 15.2 (Christophe Hurpeau)
