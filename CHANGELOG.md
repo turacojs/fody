@@ -1,3 +1,15 @@
+### v5.1.3
+
+- [`664c7ed`](https://github.com/turacojs/fody/commit/664c7ed53f83b7560a6b7f54b80679d4e0f24c87) temp fix (Christophe Hurpeau)
+
+### v5.1.2
+
+- [`e65b2e6`](https://github.com/turacojs/fody/commit/e65b2e6fd438c34c9bc51d74cc4a4cf8da6ea8f8) fix react-hot-loader (Christophe Hurpeau)
+
+### v5.1.1
+
+- [`2d30ddc`](https://github.com/turacojs/fody/commit/2d30ddca94fde8acd106b07bd515c1f24b507498) fix react-hot-loader import (Christophe Hurpeau)
+
 ### v5.1.0
 
 - [`5548e74`](https://github.com/turacojs/fody/commit/5548e7471adce1b8c3b1379aa248e7ea2a043668) update dependencies (Christophe Hurpeau)
