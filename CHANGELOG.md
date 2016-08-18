@@ -1,3 +1,7 @@
+### v5.1.1
+
+- [`2d30ddc`](https://github.com/turacojs/fody/commit/2d30ddca94fde8acd106b07bd515c1f24b507498) fix react-hot-loader import (Christophe Hurpeau)
+
 ### v5.1.0
 
 - [`5548e74`](https://github.com/turacojs/fody/commit/5548e7471adce1b8c3b1379aa248e7ea2a043668) update dependencies (Christophe Hurpeau)
