@@ -9,43 +9,43 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import { Component, PropTypes } from 'react';
 
 var App = function (_Component) {
-    _inherits(App, _Component);
+  _inherits(App, _Component);
 
-    function App() {
-        _classCallCheck(this, App);
+  function App() {
+    _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: 'getChildContext',
+    value: function getChildContext() {
+      return this.props.context;
     }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.props.children;
+    }
+  }]);
 
-    _createClass(App, [{
-        key: 'getChildContext',
-        value: function getChildContext() {
-            return this.props.context;
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return this.props.children;
-        }
-    }]);
-
-    return App;
+  return App;
 }(Component);
 
 App.propTypes = {
-    children: PropTypes.element.isRequired,
-    context: PropTypes.shape({
-        addCss: PropTypes.func,
-        setTitle: PropTypes.func,
-        setMeta: PropTypes.func,
-        context: PropTypes.object
-    })
+  children: PropTypes.element.isRequired,
+  context: PropTypes.shape({
+    addCss: PropTypes.func,
+    setTitle: PropTypes.func,
+    setMeta: PropTypes.func,
+    context: PropTypes.object
+  })
 };
 App.childContextTypes = {
-    addCss: PropTypes.func.isRequired,
-    setTitle: PropTypes.func.isRequired,
-    setMeta: PropTypes.func.isRequired,
-    context: PropTypes.object.isRequired
+  addCss: PropTypes.func.isRequired,
+  setTitle: PropTypes.func.isRequired,
+  setMeta: PropTypes.func.isRequired,
+  context: PropTypes.object.isRequired
 };
 export default App;
 //# sourceMappingURL=App.js.map
