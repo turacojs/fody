@@ -2,7 +2,7 @@
 /* eslint react/no-render-return-value: "off" */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from 'react-hot-loader'; // #if !PRODUCTION
+import { AppContainer } from 'react-hot-loader'; // #if !PRODUCTION
 import DefaultApp from './App';
 
 export App from './App';

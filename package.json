@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "react-dom": "^15.3.0",
-    "react-hot-loader": "^3.0.0-beta.2"
+    "react-hot-loader": "gaearon/react-hot-loader#47d53e674fd38ad89c97f60adb24e72d3832f12e"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",

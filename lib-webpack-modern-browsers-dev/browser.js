@@ -4,7 +4,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* eslint react/no-render-return-value: "off" */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from 'react-hot-loader'; //defines: #if !PRODUCTION = !false
+import { AppContainer } from 'react-hot-loader'; //defines: #if !PRODUCTION = !false
 import DefaultApp from './App';
 
 import _App from './App';

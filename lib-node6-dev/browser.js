@@ -23,8 +23,6 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactHotLoader = require('react-hot-loader');
 
-var _reactHotLoader2 = _interopRequireDefault(_reactHotLoader);
-
 var _App2 = require('./App');
 
 var _App3 = _interopRequireDefault(_App2);
@@ -50,7 +48,7 @@ function app(_ref) {
   );
   if (module.hot) {
     return _reactDom2.default.render(_react2.default.createElement(
-      _reactHotLoader2.default,
+      _reactHotLoader.AppContainer,
       {
         __self: this
       },
