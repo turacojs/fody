@@ -11,7 +11,9 @@ export function app({ App, context, View, data, element }) {
   App = App || DefaultApp;
   const app = <App context={context}><View {...data} /></App>;
   if (!PRODUCTION && module.hot) {
-    return ReactDOM.render(<AppContainer>{app}</AppContainer>, element);
+    return ReactDOM.render((
+      <AppContainer errorReporter={({ error }) => { throw error; }}>{app}</AppContainer>
+    ), element);
   } else {
     return ReactDOM.render(app, element);
   }

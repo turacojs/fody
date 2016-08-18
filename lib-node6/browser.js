@@ -44,12 +44,12 @@ function app(_ref) {
   }
 }
 
-function render(_ref2) {
-  let App = _ref2.App;
-  let context = _ref2.context;
-  let View = _ref2.View;
-  let data = _ref2.data;
-  let element = _ref2.element;
+function render(_ref3) {
+  let App = _ref3.App;
+  let context = _ref3.context;
+  let View = _ref3.View;
+  let data = _ref3.data;
+  let element = _ref3.element;
 
   const ctx = {
     addCss() {},

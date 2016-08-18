@@ -30,8 +30,10 @@ export function app(_ref) {
   if (module.hot) {
     return ReactDOM.render(React.createElement(
       AppContainer,
-      {
-        __self: this
+      { errorReporter: function errorReporter(_ref2) {
+          var error = _ref2.error;
+          throw error;
+        }, __self: this
       },
       app
     ), element);
@@ -40,12 +42,12 @@ export function app(_ref) {
   }
 }
 
-export default function render(_ref2) {
-  var App = _ref2.App;
-  var context = _ref2.context;
-  var View = _ref2.View;
-  var data = _ref2.data;
-  var element = _ref2.element;
+export default function render(_ref3) {
+  var App = _ref3.App;
+  var context = _ref3.context;
+  var View = _ref3.View;
+  var data = _ref3.data;
+  var element = _ref3.element;
 
   var ctx = {
     addCss: function addCss() {},
