@@ -1,3 +1,7 @@
+### v5.1.3
+
+- [`664c7ed`](https://github.com/turacojs/fody/commit/664c7ed53f83b7560a6b7f54b80679d4e0f24c87) temp fix (Christophe Hurpeau)
+
 ### v5.1.2
 
 - [`e65b2e6`](https://github.com/turacojs/fody/commit/e65b2e6fd438c34c9bc51d74cc4a4cf8da6ea8f8) fix react-hot-loader (Christophe Hurpeau)
