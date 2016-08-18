@@ -1,3 +1,7 @@
+### v5.1.4
+
+- [`336abcf`](https://github.com/turacojs/fody/commit/336abcf16a91c1b1aa4fd6d0f66e51680fd934d5) fix react-hot-loader redbox-react (Christophe Hurpeau)
+
 ### v5.1.3
 
 - [`664c7ed`](https://github.com/turacojs/fody/commit/664c7ed53f83b7560a6b7f54b80679d4e0f24c87) temp fix (Christophe Hurpeau)
