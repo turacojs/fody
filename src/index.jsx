@@ -1,12 +1,15 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import DefaultApp from './App';
 
 export App from './App';
+export Helmet from 'react-helmet';
 
 export function renderToStringApp({ App, context, View, data }) {
   App = App || DefaultApp;
-  return renderToString(<App context={context}><View {...data} /></App>);
+  const app = <App context={context}><View {...data} /></App>;
+  return renderToString(app);
 }
 
 function layout(Layout, data) {
@@ -17,27 +20,20 @@ function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
   const css = new Set();
   htmlData = Object.assign(htmlData, data);
 
-  const ctx = {
-    addCss: value => css.add(value),
-    setTitle: value => htmlData.title = value,
-    setMeta: (key, value) => htmlData[key] = value,
-    context,
-  };
-
   if (!initialData) {
     initialData = data;
   } else {
     initialData = typeof initialData === 'function' ? initialData() : initialData;
   }
 
+  const body = renderToStringApp({ App, context, View, data });
+
+  const head = Helmet.rewind();
+
   Object.assign(htmlData, {
-    body: renderToStringApp({
-      context: ctx,
-      App,
-      View,
-      data,
-    }),
-    initialData: initialData,
+    head,
+    body,
+    initialData,
     css: Array.from(css).join(''),
   });
 
@@ -47,7 +43,7 @@ function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
     throw new Error('Invalid Layout');
   }
 
-  return layout(Layout, htmlData, ctx);
+  return layout(Layout, htmlData);
 }
 
 export default function render(options) {

@@ -1,69 +1,63 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-/* global document, PRODUCTION */
+var _jsxFileName = 'browser.jsx';
 /* eslint react/no-render-return-value: "off" */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader'; //defines: #if !PRODUCTION = !false
-import RedBoxWrapper from './RedBoxWrapper'; //defines: #if !PRODUCTION = !false
+import { AppContainer } from 'react-hot-loader';
+import RedBoxWrapper from './RedBoxWrapper';
 import DefaultApp from './App';
 
 import _App from './App';
 export { _App as App };
+import _Helmet from 'react-helmet';
+export { _Helmet as Helmet };
 
 
 export function app(_ref) {
-  var App = _ref.App;
-  var context = _ref.context;
-  var View = _ref.View;
-  var data = _ref.data;
-  var element = _ref.element;
+  var App = _ref.App,
+      context = _ref.context,
+      View = _ref.View,
+      data = _ref.data,
+      element = _ref.element;
 
   App = App || DefaultApp;
   var app = React.createElement(
     App,
-    { context: context, __self: this
+    { context: context, __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      }
     },
     React.createElement(View, _extends({}, data, {
-      __self: this
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      }
     }))
   );
-  if (module.hot) {
-    return ReactDOM.render(React.createElement(
-      AppContainer,
-      { errorReporter: RedBoxWrapper, __self: this
-      },
-      app
-    ), element);
-  } else {
-    return ReactDOM.render(app, element);
-  }
+
+  return ReactDOM.render(React.createElement(
+    AppContainer,
+    { errorReporter: RedBoxWrapper, __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      }
+    },
+    app
+  ), element);
 }
 
 export default function render(_ref2) {
-  var App = _ref2.App;
-  var context = _ref2.context;
-  var View = _ref2.View;
-  var data = _ref2.data;
-  var element = _ref2.element;
+  var App = _ref2.App,
+      context = _ref2.context,
+      View = _ref2.View,
+      data = _ref2.data,
+      element = _ref2.element;
 
-  var ctx = {
-    addCss: function addCss() {},
-
-    setTitle: function setTitle(value) {
-      return document.title = value;
-    },
-    setMeta: function setMeta() {},
-
-    context: context
-  };
-
-  return app({
-    context: ctx,
-    App: App,
-    View: View,
-    data: data,
-    element: element
-  });
+  return app({ App: App, context: context, View: View, data: data, element: element });
 }
 //# sourceMappingURL=browser.js.map

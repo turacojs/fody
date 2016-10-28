@@ -14,13 +14,13 @@ var App = function (_Component) {
   function App() {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
   }
 
   _createClass(App, [{
     key: 'getChildContext',
     value: function getChildContext() {
-      return this.props.context;
+      return { context: this.props.context };
     }
   }, {
     key: 'render',
@@ -34,17 +34,10 @@ var App = function (_Component) {
 
 App.propTypes = {
   children: PropTypes.element.isRequired,
-  context: PropTypes.shape({
-    addCss: PropTypes.func,
-    setTitle: PropTypes.func,
-    setMeta: PropTypes.func,
-    context: PropTypes.object
-  })
+  // eslint-disable-next-line react/forbid-prop-types
+  context: PropTypes.object
 };
 App.childContextTypes = {
-  addCss: PropTypes.func.isRequired,
-  setTitle: PropTypes.func.isRequired,
-  setMeta: PropTypes.func.isRequired,
   context: PropTypes.object.isRequired
 };
 export default App;

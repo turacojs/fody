@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.App = undefined;
+exports.Helmet = exports.App = undefined;
 exports.app = app;
 exports.default = render;
 
@@ -19,21 +19,21 @@ var _App2 = require('./App');
 
 var _App3 = _interopRequireDefault(_App2);
 
+var _reactHelmet = require('react-helmet');
+
+var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* global document, PRODUCTION */
 /* eslint react/no-render-return-value: "off" */
-; //defines: #if !PRODUCTION = !true
-
-; //defines: #if !PRODUCTION = !true
-
 exports.App = _App3.default;
+exports.Helmet = _reactHelmet2.default;
 function app(_ref) {
-  let App = _ref.App;
-  let context = _ref.context;
-  let View = _ref.View;
-  let data = _ref.data;
-  let element = _ref.element;
+  let App = _ref.App,
+      context = _ref.context,
+      View = _ref.View,
+      data = _ref.data,
+      element = _ref.element;
 
   App = App || _App3.default;
   const app = _react2.default.createElement(
@@ -41,31 +41,17 @@ function app(_ref) {
     { context: context },
     _react2.default.createElement(View, data)
   );
-  {
-    return _reactDom2.default.render(app, element);
-  }
+
+  return _reactDom2.default.render(app, element);
 }
 
 function render(_ref2) {
-  let App = _ref2.App;
-  let context = _ref2.context;
-  let View = _ref2.View;
-  let data = _ref2.data;
-  let element = _ref2.element;
+  let App = _ref2.App,
+      context = _ref2.context,
+      View = _ref2.View,
+      data = _ref2.data,
+      element = _ref2.element;
 
-  const ctx = {
-    addCss() {},
-    setTitle: value => document.title = value,
-    setMeta() {},
-    context
-  };
-
-  return app({
-    context: ctx,
-    App,
-    View,
-    data,
-    element
-  });
+  return app({ App, context, View, data, element });
 }
 //# sourceMappingURL=browser.js.map
