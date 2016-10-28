@@ -1,3 +1,7 @@
+### v6.0.0-beta.1
+
+- [`5f5ac16`](https://github.com/turacojs/fody/commit/5f5ac167d41fbefbaa21ca7e02530475a7f0e9f1) refactor: pob update and react-helmet (Christophe Hurpeau)
+
 ### v5.1.4
 
 - [`336abcf`](https://github.com/turacojs/fody/commit/336abcf16a91c1b1aa4fd6d0f66e51680fd934d5) fix react-hot-loader redbox-react (Christophe Hurpeau)
