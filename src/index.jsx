@@ -1,49 +1,29 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Helmet from 'react-helmet';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import DefaultApp from './App';
+import HelmetHtml from './HelmetHtml';
 
+export { Helmet, HelmetHtml };
 export App from './App';
-export Helmet from 'react-helmet';
 
-export function renderToStringApp({ App, context, View, data }) {
-  App = App || DefaultApp;
-  const app = <App context={context}><View {...data} /></App>;
+
+const DefaultHtml = ({ head, body }) => (
+  <HelmetHtml head={head}>
+    <div id="app" dangerouslySetInnerHTML={{ __html: body }} />
+  </HelmetHtml>
+);
+
+export function renderToStringApp(App = DefaultApp, appProps, View, props): string {
+  const app = <App {...appProps}><View {...props} /></App>;
   return renderToString(app);
 }
 
-function layout(Layout, data) {
-  return <Layout {...data} />;
-}
-
-function app({ context, View, htmlData = {}, data, initialData, Html, App }) {
-  const css = new Set();
-  htmlData = Object.assign(htmlData, data);
-
-  if (!initialData) {
-    initialData = data;
-  } else {
-    initialData = typeof initialData === 'function' ? initialData() : initialData;
-  }
-
-  const body = renderToStringApp({ App, context, View, data });
-
+function app({ App, appProps, View, props, Html = DefaultHtml }) {
+  const body = renderToStringApp(App, appProps, View, props);
   const head = Helmet.rewind();
-
-  Object.assign(htmlData, {
-    head,
-    body,
-    initialData,
-    css: Array.from(css).join(''),
-  });
-
-  const Layout = View.Layout || Html;
-
-  if (!Layout) {
-    throw new Error('Invalid Layout');
-  }
-
-  return layout(Layout, htmlData);
+  return <Html head={head} body={body} />;
 }
 
 export default function render(options) {

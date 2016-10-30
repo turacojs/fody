@@ -1,14 +1,11 @@
-var _jsxFileName = 'RedBoxWrapper.jsx';
+var _jsxFileName = 'RedBoxWrapper.jsx',
+    _this = this;
+
 import React from 'react';
 import { PropTypes } from 'react';
 import RedBox from 'redbox-react';
 
-WrappedRedBox.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  error: PropTypes.any
-};
-
-export default function WrappedRedBox(_ref) {
+var WrappedRedBox = (_ref) => {
   var error = _ref.error;
 
   if (error) {
@@ -16,11 +13,18 @@ export default function WrappedRedBox(_ref) {
     console.error(error.message || error, error.stack);
   }
 
-  return React.createElement(RedBox, { error: error, __self: this,
+  return React.createElement(RedBox, { error: error, __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 10
     }
   });
-}
+};
+
+WrappedRedBox.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  error: PropTypes.any
+};
+
+export default WrappedRedBox;
 //# sourceMappingURL=RedBoxWrapper.js.map

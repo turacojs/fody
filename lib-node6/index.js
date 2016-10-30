@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Helmet = exports.App = undefined;
+exports.App = exports.HelmetHtml = exports.Helmet = undefined;
 exports.renderToStringApp = renderToStringApp;
 exports.default = render;
 
@@ -21,66 +21,53 @@ var _App2 = require('./App');
 
 var _App3 = _interopRequireDefault(_App2);
 
+var _HelmetHtml = require('./HelmetHtml');
+
+var _HelmetHtml2 = _interopRequireDefault(_HelmetHtml);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.App = _App3.default;
 exports.Helmet = _reactHelmet2.default;
-function renderToStringApp(_ref) {
-  let App = _ref.App,
-      context = _ref.context,
-      View = _ref.View,
-      data = _ref.data;
+exports.HelmetHtml = _HelmetHtml2.default; /* eslint-disable react/prop-types */
 
-  App = App || _App3.default;
+exports.App = _App3.default;
+
+
+const DefaultHtml = (_ref) => {
+  let head = _ref.head,
+      body = _ref.body;
+  return _react2.default.createElement(
+    _HelmetHtml2.default,
+    { head: head },
+    _react2.default.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: body } })
+  );
+};
+
+function renderToStringApp() {
+  let App = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _App3.default;
+  let appProps = arguments[1];
+  let View = arguments[2];
+  let props = arguments[3];
+
   const app = _react2.default.createElement(
     App,
-    { context: context },
-    _react2.default.createElement(View, data)
+    appProps,
+    _react2.default.createElement(View, props)
   );
   return (0, _server.renderToString)(app);
 }
 
-function layout(Layout, data) {
-  return _react2.default.createElement(Layout, data);
-}
-
 function app(_ref2) {
-  let context = _ref2.context,
-      View = _ref2.View;
-  var _ref2$htmlData = _ref2.htmlData;
-  let htmlData = _ref2$htmlData === undefined ? {} : _ref2$htmlData,
-      data = _ref2.data,
-      initialData = _ref2.initialData,
-      Html = _ref2.Html,
-      App = _ref2.App;
+  let App = _ref2.App,
+      appProps = _ref2.appProps,
+      View = _ref2.View,
+      props = _ref2.props;
+  var _ref2$Html = _ref2.Html;
+  let Html = _ref2$Html === undefined ? DefaultHtml : _ref2$Html;
 
-  const css = new Set();
-  htmlData = Object.assign(htmlData, data);
-
-  if (!initialData) {
-    initialData = data;
-  } else {
-    initialData = typeof initialData === 'function' ? initialData() : initialData;
-  }
-
-  const body = renderToStringApp({ App, context, View, data });
-
+  const body = renderToStringApp(App, appProps, View, props);
   const head = _reactHelmet2.default.rewind();
-
-  Object.assign(htmlData, {
-    head,
-    body,
-    initialData,
-    css: Array.from(css).join('')
-  });
-
-  const Layout = View.Layout || Html;
-
-  if (!Layout) {
-    throw new Error('Invalid Layout');
-  }
-
-  return layout(Layout, htmlData);
+  return _react2.default.createElement(Html, { head: head, body: body });
 }
 
 function render(options) {

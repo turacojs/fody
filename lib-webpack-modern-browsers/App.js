@@ -1,5 +1,6 @@
 import { Component, PropTypes } from 'react';
 
+
 export default class App extends Component {
 
   getChildContext() {
@@ -11,7 +12,7 @@ export default class App extends Component {
   }
 }
 App.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   context: PropTypes.object
 };

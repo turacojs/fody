@@ -33,7 +33,7 @@ var App = function (_Component) {
 }(Component);
 
 App.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   context: PropTypes.object
 };

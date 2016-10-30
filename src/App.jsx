@@ -1,8 +1,9 @@
 import { Component, PropTypes } from 'react';
+import type { ReactNodeType } from './types';
 
 export default class App extends Component {
   static propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.node.isRequired,
     // eslint-disable-next-line react/forbid-prop-types
     context: PropTypes.object,
   };
@@ -15,7 +16,7 @@ export default class App extends Component {
     return { context: this.props.context };
   }
 
-  render() {
+  render(): ReactNodeType {
     return this.props.children;
   }
 }

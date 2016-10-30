@@ -3,8 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Helmet = exports.App = undefined;
-exports.app = app;
+exports.App = exports.Helmet = undefined;
 exports.default = render;
 
 var _react = require('react');
@@ -26,32 +25,22 @@ var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint react/no-render-return-value: "off" */
-exports.App = _App3.default;
 exports.Helmet = _reactHelmet2.default;
-function app(_ref) {
-  let App = _ref.App,
-      context = _ref.context,
+exports.App = _App3.default;
+function render(_ref) {
+  var _ref$App = _ref.App;
+  let App = _ref$App === undefined ? _App3.default : _ref$App,
+      appProps = _ref.appProps,
       View = _ref.View,
-      data = _ref.data,
+      props = _ref.props,
       element = _ref.element;
 
-  App = App || _App3.default;
-  const app = _react2.default.createElement(
+  let app = _react2.default.createElement(
     App,
-    { context: context },
-    _react2.default.createElement(View, data)
+    appProps,
+    _react2.default.createElement(View, props)
   );
 
   return _reactDom2.default.render(app, element);
-}
-
-function render(_ref2) {
-  let App = _ref2.App,
-      context = _ref2.context,
-      View = _ref2.View,
-      data = _ref2.data,
-      element = _ref2.element;
-
-  return app({ App, context, View, data, element });
 }
 //# sourceMappingURL=browser.js.map

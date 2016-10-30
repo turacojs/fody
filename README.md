@@ -14,11 +14,8 @@ npm install --save fody
 
 ```js
 import render from 'fody';
-import Html from './HtmlComponent';
 
-// ...
-
-render({ context, Component, data, Html });
+render({ App, appProps: { context }, View, props, Html });
 ```
 
 [npm-image]: https://img.shields.io/npm/v/fody.svg?style=flat-square

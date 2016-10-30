@@ -4,36 +4,26 @@ import ReactDOM from 'react-dom';
 
 import DefaultApp from './App';
 
-import _App from './App';
-export { _App as App };
 import _Helmet from 'react-helmet';
 export { _Helmet as Helmet };
+import _App from './App';
+export { _App as App };
 
 
-export function app(_ref) {
-  var App = _ref.App,
-      context = _ref.context,
+export default function render(_ref) {
+  var _ref$App = _ref.App,
+      App = _ref$App === undefined ? DefaultApp : _ref$App,
+      appProps = _ref.appProps,
       View = _ref.View,
-      data = _ref.data,
+      props = _ref.props,
       element = _ref.element;
 
-  App = App || DefaultApp;
   var app = React.createElement(
     App,
-    { context: context },
-    React.createElement(View, data)
+    appProps,
+    React.createElement(View, props)
   );
 
   return ReactDOM.render(app, element);
-}
-
-export default function render(_ref2) {
-  var App = _ref2.App,
-      context = _ref2.context,
-      View = _ref2.View,
-      data = _ref2.data,
-      element = _ref2.element;
-
-  return app({ App: App, context: context, View: View, data: data, element: element });
 }
 //# sourceMappingURL=browser.js.map

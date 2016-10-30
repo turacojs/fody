@@ -8,56 +8,49 @@ import { AppContainer } from 'react-hot-loader';
 import RedBoxWrapper from './RedBoxWrapper';
 import DefaultApp from './App';
 
-import _App from './App';
-export { _App as App };
 import _Helmet from 'react-helmet';
 export { _Helmet as Helmet };
+import _App from './App';
+export { _App as App };
 
 
-export function app(_ref) {
-  var App = _ref.App,
-      context = _ref.context,
+export default function render(_ref) {
+  var _ref$App = _ref.App,
+      App = _ref$App === undefined ? DefaultApp : _ref$App,
+      appProps = _ref.appProps,
       View = _ref.View,
-      data = _ref.data,
+      props = _ref.props,
       element = _ref.element;
 
-  App = App || DefaultApp;
   var app = React.createElement(
     App,
-    { context: context, __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      }
-    },
-    React.createElement(View, _extends({}, data, {
+    _extends({}, appProps, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 12
+      }
+    }),
+    React.createElement(View, _extends({}, props, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
       }
     }))
   );
 
-  return ReactDOM.render(React.createElement(
+  app = React.createElement(
     AppContainer,
     { errorReporter: RedBoxWrapper, __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 15
       }
     },
     app
-  ), element);
-}
+  );
 
-export default function render(_ref2) {
-  var App = _ref2.App,
-      context = _ref2.context,
-      View = _ref2.View,
-      data = _ref2.data,
-      element = _ref2.element;
-
-  return app({ App: App, context: context, View: View, data: data, element: element });
+  return ReactDOM.render(app, element);
 }
 //# sourceMappingURL=browser.js.map
