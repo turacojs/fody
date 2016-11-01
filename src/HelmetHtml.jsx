@@ -29,7 +29,7 @@ Html.propTypes = {
     script: HelmetHeadPropType,
     style: HelmetHeadPropType,
   }).isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Html;

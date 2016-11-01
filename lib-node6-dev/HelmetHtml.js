@@ -68,7 +68,7 @@ Html.propTypes = {
     script: HelmetHeadPropType,
     style: HelmetHeadPropType
   }).isRequired,
-  children: _react.PropTypes.element.isRequired
+  children: _react.PropTypes.node.isRequired
 };
 
 exports.default = Html;
