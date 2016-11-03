@@ -1,3 +1,7 @@
+### v6.0.1
+
+- [`68afb9d`](https://github.com/turacojs/fody/commit/68afb9de87c79a96df9873a4fd9deac4f8bd4820) refactor: fixes (Christophe Hurpeau)
+
 ### v6.0.0
 
 - [`7904e21`](https://github.com/turacojs/fody/commit/7904e2144854e2de0d70c758d6b57b4dfd6c2db9) fix: body children proptype (Christophe Hurpeau)
