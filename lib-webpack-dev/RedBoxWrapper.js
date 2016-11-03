@@ -2,11 +2,19 @@ var _jsxFileName = 'RedBoxWrapper.jsx',
     _this = this;
 
 import React from 'react';
-import { PropTypes } from 'react';
+import _t from 'tcomb-forked';
 import RedBox from 'redbox-react';
 
-var WrappedRedBox = function WrappedRedBox(_ref) {
+var PropsType = _t.interface({
+  error: _t.Any
+}, 'PropsType');
+
+export default (function (_ref) {
   var error = _ref.error;
+
+  _assert({
+    error: error
+  }, PropsType, '{ error }');
 
   if (error) {
     // eslint-disable-next-line no-console
@@ -16,15 +24,26 @@ var WrappedRedBox = function WrappedRedBox(_ref) {
   return React.createElement(RedBox, { error: error, __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 13
     }
   });
-};
+});
 
-WrappedRedBox.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  error: PropTypes.any
-};
+function _assert(x, type, name) {
+  function message() {
+    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
+  }
 
-export default WrappedRedBox;
+  if (_t.isType(type)) {
+    if (!type.is(x)) {
+      type(x, [name + ': ' + _t.getTypeName(type)]);
+
+      _t.fail(message());
+    }
+  } else if (!(x instanceof type)) {
+    _t.fail(message());
+  }
+
+  return x;
+}
 //# sourceMappingURL=RedBoxWrapper.js.map

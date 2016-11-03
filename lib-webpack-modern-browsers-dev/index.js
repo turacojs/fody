@@ -9,32 +9,14 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import DefaultApp from './App';
-import HelmetHtml from './HelmetHtml';
+import DefaultLayout from './layout/DefaultLayout';
+import { ReactElementType } from './types';
 
-export { Helmet, HelmetHtml };
+export { Helmet };
 import _App from './App';
 export { _App as App };
 
-
-var DefaultHtml = (_ref) => {
-  var head = _ref.head,
-      body = _ref.body;
-  return React.createElement(
-    HelmetHtml,
-    { head: head, __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      }
-    },
-    React.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: body }, __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      }
-    })
-  );
-};
+export { Html, Head, Body } from './layout';
 
 export function renderToStringApp() {
   var App = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : DefaultApp;
@@ -48,14 +30,14 @@ export function renderToStringApp() {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 14
         }
       }),
       React.createElement(View, _extends({}, props, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 14
         }
       }))
     );
@@ -63,23 +45,26 @@ export function renderToStringApp() {
   }.apply(this, arguments), _t.String, 'return value');
 }
 
-function app(_ref2) {
-  var App = _ref2.App,
-      appProps = _ref2.appProps,
-      View = _ref2.View,
-      props = _ref2.props,
-      _ref2$Html = _ref2.Html,
-      Html = _ref2$Html === undefined ? DefaultHtml : _ref2$Html;
-
-  var body = renderToStringApp(App, appProps, View, props);
-  var head = Helmet.rewind();
-  return React.createElement(Html, { head: head, body: body, __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    }
-  });
-}
+var app = (_ref) => {
+  var _ref$Layout = _ref.Layout,
+      Layout = _ref$Layout === undefined ? DefaultLayout : _ref$Layout,
+      layoutProps = _ref.layoutProps,
+      App = _ref.App,
+      appProps = _ref.appProps,
+      View = _ref.View,
+      props = _ref.props;
+  return _assert((() => {
+    var content = renderToStringApp(App, appProps, View, props);
+    var helmet = Helmet.rewind();
+    return React.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      }
+    }));
+  })(), ReactElementType, 'return value');
+};
 
 export default function render(options) {
   return `<!doctype html>\n${ renderToStaticMarkup(app(options)) }`;

@@ -9,14 +9,28 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _tcombForked = require('tcomb-forked');
+
+var _tcombForked2 = _interopRequireDefault(_tcombForked);
+
 var _redboxReact = require('redbox-react');
 
 var _redboxReact2 = _interopRequireDefault(_redboxReact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const WrappedRedBox = (_ref) => {
-  let error = _ref.error;
+const PropsType = _tcombForked2.default.interface({
+  error: _tcombForked2.default.Any
+}, 'PropsType');
+
+exports.default = (_ref) => {
+  var _assert2 = _assert(_ref, PropsType, '{ error }');
+
+  let error = _assert2.error;
+
+  _assert({
+    error
+  }, PropsType, '{ error }');
 
   if (error) {
     // eslint-disable-next-line no-console
@@ -26,15 +40,26 @@ const WrappedRedBox = (_ref) => {
   return _react2.default.createElement(_redboxReact2.default, { error: error, __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 13
     }
   });
 };
 
-WrappedRedBox.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  error: _react.PropTypes.any
-};
+function _assert(x, type, name) {
+  function message() {
+    return 'Invalid value ' + _tcombForked2.default.stringify(x) + ' supplied to ' + name + ' (expected a ' + _tcombForked2.default.getTypeName(type) + ')';
+  }
 
-exports.default = WrappedRedBox;
+  if (_tcombForked2.default.isType(type)) {
+    if (!type.is(x)) {
+      type(x, [name + ': ' + _tcombForked2.default.getTypeName(type)]);
+
+      _tcombForked2.default.fail(message());
+    }
+  } else if (!(x instanceof type)) {
+    _tcombForked2.default.fail(message());
+  }
+
+  return x;
+}
 //# sourceMappingURL=RedBoxWrapper.js.map

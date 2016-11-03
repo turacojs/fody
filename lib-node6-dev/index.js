@@ -3,12 +3,32 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.App = exports.HelmetHtml = exports.Helmet = undefined;
+exports.Body = exports.Head = exports.Html = exports.App = exports.Helmet = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _jsxFileName = 'index.jsx'; /* eslint-disable react/prop-types */
 
+var _layout = require('./layout');
+
+Object.defineProperty(exports, 'Html', {
+  enumerable: true,
+  get: function get() {
+    return _layout.Html;
+  }
+});
+Object.defineProperty(exports, 'Head', {
+  enumerable: true,
+  get: function get() {
+    return _layout.Head;
+  }
+});
+Object.defineProperty(exports, 'Body', {
+  enumerable: true,
+  get: function get() {
+    return _layout.Body;
+  }
+});
 exports.renderToStringApp = renderToStringApp;
 exports.default = render;
 
@@ -30,37 +50,16 @@ var _App2 = require('./App');
 
 var _App3 = _interopRequireDefault(_App2);
 
-var _HelmetHtml = require('./HelmetHtml');
+var _DefaultLayout = require('./layout/DefaultLayout');
 
-var _HelmetHtml2 = _interopRequireDefault(_HelmetHtml);
+var _DefaultLayout2 = _interopRequireDefault(_DefaultLayout);
+
+var _types = require('./types');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Helmet = _reactHelmet2.default;
-exports.HelmetHtml = _HelmetHtml2.default;
 exports.App = _App3.default;
-
-
-const DefaultHtml = (_ref) => {
-  let head = _ref.head,
-      body = _ref.body;
-  return _react2.default.createElement(
-    _HelmetHtml2.default,
-    { head: head, __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      }
-    },
-    _react2.default.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: body }, __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      }
-    })
-  );
-};
-
 function renderToStringApp() {
   let App = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _App3.default;
   let appProps = arguments[1];
@@ -73,14 +72,14 @@ function renderToStringApp() {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 14
         }
       }),
       _react2.default.createElement(View, _extends({}, props, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 14
         }
       }))
     );
@@ -88,23 +87,26 @@ function renderToStringApp() {
   }.apply(this, arguments), _tcombForked2.default.String, 'return value');
 }
 
-function app(_ref2) {
-  let App = _ref2.App,
-      appProps = _ref2.appProps,
-      View = _ref2.View,
-      props = _ref2.props;
-  var _ref2$Html = _ref2.Html;
-  let Html = _ref2$Html === undefined ? DefaultHtml : _ref2$Html;
-
-  const body = renderToStringApp(App, appProps, View, props);
-  const head = _reactHelmet2.default.rewind();
-  return _react2.default.createElement(Html, { head: head, body: body, __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    }
-  });
-}
+const app = (_ref) => {
+  var _ref$Layout = _ref.Layout;
+  let Layout = _ref$Layout === undefined ? _DefaultLayout2.default : _ref$Layout,
+      layoutProps = _ref.layoutProps,
+      App = _ref.App,
+      appProps = _ref.appProps,
+      View = _ref.View,
+      props = _ref.props;
+  return _assert((() => {
+    const content = renderToStringApp(App, appProps, View, props);
+    const helmet = _reactHelmet2.default.rewind();
+    return _react2.default.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps, {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      }
+    }));
+  })(), _types.ReactElementType, 'return value');
+};
 
 function render(options) {
   return `<!doctype html>\n${ (0, _server.renderToStaticMarkup)(app(options)) }`;

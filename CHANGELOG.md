@@ -4,8 +4,6 @@
 - [`c7b9be0`](https://github.com/turacojs/fody/commit/c7b9be09aba5e5a83af4239f6c2f39dd617e247e) refactor: clearer api (Christophe Hurpeau)
 - [`5f5ac16`](https://github.com/turacojs/fody/commit/5f5ac167d41fbefbaa21ca7e02530475a7f0e9f1) refactor: pob update and react-helmet (Christophe Hurpeau)
 
-
-
 ### v6.0.0-beta.3
 
 - [`7904e21`](https://github.com/turacojs/fody/commit/7904e2144854e2de0d70c758d6b57b4dfd6c2db9) fix: body children proptype (Christophe Hurpeau)

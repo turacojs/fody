@@ -1,8 +1,7 @@
 import React from 'react';
-import { PropTypes } from 'react';
 import RedBox from 'redbox-react';
 
-var WrappedRedBox = (_ref) => {
+export default ((_ref) => {
   var error = _ref.error;
 
   if (error) {
@@ -11,12 +10,5 @@ var WrappedRedBox = (_ref) => {
   }
 
   return React.createElement(RedBox, { error: error });
-};
-
-WrappedRedBox.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  error: PropTypes.any
-};
-
-export default WrappedRedBox;
+});
 //# sourceMappingURL=RedBoxWrapper.js.map

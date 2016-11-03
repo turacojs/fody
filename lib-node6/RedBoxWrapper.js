@@ -14,7 +14,7 @@ var _redboxReact2 = _interopRequireDefault(_redboxReact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const WrappedRedBox = (_ref) => {
+exports.default = (_ref) => {
   let error = _ref.error;
 
   if (error) {
@@ -24,11 +24,4 @@ const WrappedRedBox = (_ref) => {
 
   return _react2.default.createElement(_redboxReact2.default, { error: error });
 };
-
-WrappedRedBox.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  error: _react.PropTypes.any
-};
-
-exports.default = WrappedRedBox;
 //# sourceMappingURL=RedBoxWrapper.js.map
