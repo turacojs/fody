@@ -12,7 +12,7 @@ export default class App extends Component {
     context: PropTypes.object.isRequired,
   };
 
-  getChildContext() {
+  getChildContext(): Object {
     return { context: this.props.context };
   }
 
