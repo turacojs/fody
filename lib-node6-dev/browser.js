@@ -3,19 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.App = exports.Helmet = undefined;
+exports.App = exports.Helmet = exports.unmountComponentAtNode = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _jsxFileName = 'browser.jsx'; /* eslint react/no-render-return-value: "off" */
 
+var _reactDom = require('react-dom');
+
+Object.defineProperty(exports, 'unmountComponentAtNode', {
+  enumerable: true,
+  get: function get() {
+    return _reactDom.unmountComponentAtNode;
+  }
+});
 exports.default = render;
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -51,14 +57,14 @@ function render(_ref) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       }
     }),
     _react2.default.createElement(View, _extends({}, props, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       }
     }))
   );
@@ -68,7 +74,7 @@ function render(_ref) {
     { errorReporter: _RedBoxWrapper2.default, __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       }
     },
     app

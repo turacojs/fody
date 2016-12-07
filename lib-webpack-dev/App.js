@@ -23,7 +23,9 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'getChildContext',
     value: function getChildContext() {
-      return { context: this.props.context };
+      return _assert(function () {
+        return { context: this.props.context };
+      }.apply(this, arguments), _t.Object, 'return value');
     }
   }, {
     key: 'render',

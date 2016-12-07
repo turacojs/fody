@@ -8,6 +8,7 @@ import { AppContainer } from 'react-hot-loader';
 import RedBoxWrapper from './RedBoxWrapper';
 import DefaultApp from './App';
 
+export { unmountComponentAtNode } from 'react-dom';
 import _Helmet from 'react-helmet';
 export { _Helmet as Helmet };
 import _App from './App';
@@ -28,14 +29,14 @@ export default function render(_ref) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       }
     }),
     React.createElement(View, _extends({}, props, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       }
     }))
   );
@@ -45,7 +46,7 @@ export default function render(_ref) {
     { errorReporter: RedBoxWrapper, __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       }
     },
     app

@@ -3,14 +3,21 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.App = exports.Helmet = undefined;
+exports.App = exports.Helmet = exports.unmountComponentAtNode = undefined;
+
+var _reactDom = require('react-dom');
+
+Object.defineProperty(exports, 'unmountComponentAtNode', {
+  enumerable: true,
+  get: function get() {
+    return _reactDom.unmountComponentAtNode;
+  }
+});
 exports.default = render;
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -24,7 +31,6 @@ var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint react/no-render-return-value: "off" */
 exports.Helmet = _reactHelmet2.default;
 exports.App = _App3.default;
 function render(_ref) {

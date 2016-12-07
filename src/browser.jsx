@@ -5,6 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import RedBoxWrapper from './RedBoxWrapper';
 import DefaultApp from './App';
 
+export { unmountComponentAtNode } from 'react-dom';
 export Helmet from 'react-helmet';
 export App from './App';
 

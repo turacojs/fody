@@ -5,7 +5,9 @@ import { ReactNodeType } from './types';
 export default class App extends Component {
 
   getChildContext() {
-    return { context: this.props.context };
+    return _assert(function () {
+      return { context: this.props.context };
+    }.apply(this, arguments), _t.Object, 'return value');
   }
 
   render() {

@@ -17,7 +17,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class App extends _react.Component {
 
   getChildContext() {
-    return { context: this.props.context };
+    return _assert(function () {
+      return { context: this.props.context };
+    }.apply(this, arguments), _tcombForked2.default.Object, 'return value');
   }
 
   render() {

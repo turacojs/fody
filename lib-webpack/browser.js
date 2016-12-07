@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 
 import DefaultApp from './App';
 
+export { unmountComponentAtNode } from 'react-dom';
 import _Helmet from 'react-helmet';
 export { _Helmet as Helmet };
 import _App from './App';
