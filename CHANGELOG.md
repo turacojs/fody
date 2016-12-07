@@ -1,3 +1,8 @@
+### v6.1.0
+
+- [`8cb32d6`](https://github.com/turacojs/fody/commit/8cb32d6c4835a247c0511314882b97732b9b75fc) chore(package): eslint-config-pob@^9.0.1 (Christophe Hurpeau)
+- [`7c3f2ac`](https://github.com/turacojs/fody/commit/7c3f2ace1ac8bad79b83ba5df350a21865a54afc) feat: browser export unmountcomponentatnode (Christophe Hurpeau)
+
 ### v6.0.1
 
 - [`68afb9d`](https://github.com/turacojs/fody/commit/68afb9de87c79a96df9873a4fd9deac4f8bd4820) refactor: fixes (Christophe Hurpeau)
