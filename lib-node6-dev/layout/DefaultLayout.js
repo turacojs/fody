@@ -3,7 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'layout/DefaultLayout.jsx';
+var _jsxFileName = 'layout/DefaultLayout.jsx',
+    _arguments = arguments;
 
 var _react = require('react');
 
@@ -19,27 +20,22 @@ var _index = require('./index');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = (_ref) => {
-  var _assert2 = _assert(_ref, _types.LayoutPropsType, '{ helmet, content }');
-
-  let helmet = _assert2.helmet,
-      content = _assert2.content;
-
+exports.default = function defaultLayoutJsx({ helmet, content }) {
   _assert({
     helmet,
     content
   }, _types.LayoutPropsType, '{ helmet, content }');
 
-  return _assert((() => {
+  return _assert(function () {
     return _react2.default.createElement(
       _index.Html,
-      { helmet: helmet, __self: undefined,
+      { helmet: helmet, __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 5
         }
       },
-      _react2.default.createElement(_index.Head, { helmet: helmet, __self: undefined,
+      _react2.default.createElement(_index.Head, { helmet: helmet, __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 6
@@ -48,13 +44,13 @@ exports.default = (_ref) => {
       _react2.default.createElement(
         _index.Body,
         {
-          __self: undefined,
+          __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 7
           }
         },
-        _react2.default.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: content }, __self: undefined,
+        _react2.default.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: content }, __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 8
@@ -62,7 +58,7 @@ exports.default = (_ref) => {
         })
       )
     );
-  })(), _types.ReactElementType, 'return value');
+  }.apply(undefined, _arguments), _types.ReactElementType, 'return value');
 };
 
 function _assert(x, type, name) {

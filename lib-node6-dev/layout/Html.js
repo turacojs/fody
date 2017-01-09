@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'layout/Html.jsx';
+var _jsxFileName = 'layout/Html.jsx',
+    _arguments = arguments;
 
 var _react = require('react');
 
@@ -28,12 +29,13 @@ const PropsType = _tcombForked2.default.interface({
   children: _types.ReactNodeType
 }, 'PropsType');
 
-exports.default = (_ref) => {
-  var _assert2 = _assert(_ref, PropsType, '{ helmet, children, ...otherProps }');
+exports.default = function htmlJsx(_ref) {
+  let {
+    helmet,
+    children
+  } = _assert(_ref, PropsType, '{ helmet, children, ...otherProps }');
 
-  let helmet = _assert2.helmet,
-      children = _assert2.children,
-      otherProps = _objectWithoutProperties(_assert2, ['helmet', 'children']);
+  let otherProps = _objectWithoutProperties(_assert(_ref, PropsType, '{ helmet, children, ...otherProps }'), ['helmet', 'children']);
 
   _assert({
     helmet,
@@ -41,11 +43,11 @@ exports.default = (_ref) => {
     otherProps
   }, PropsType, '{ helmet, children, ...otherProps }');
 
-  return _assert((() => {
+  return _assert(function () {
     return _react2.default.createElement(
       'html',
       _extends({}, helmet.htmlAttributes.toComponent(), otherProps, {
-        __self: undefined,
+        __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 14
@@ -53,7 +55,7 @@ exports.default = (_ref) => {
       }),
       children
     );
-  })(), _types.ReactNodeType, 'return value');
+  }.apply(undefined, _arguments), _types.ReactNodeType, 'return value');
 };
 
 function _assert(x, type, name) {

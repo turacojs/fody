@@ -14,12 +14,7 @@ export { _App as App };
 
 export { Html, Head, Body } from './layout';
 
-export function renderToStringApp() {
-  var App = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : DefaultApp;
-  var appProps = arguments[1];
-  var View = arguments[2];
-  var props = arguments[3];
-
+export function renderToStringApp(App = DefaultApp, appProps, View, props) {
   var app = React.createElement(
     App,
     appProps,
@@ -28,15 +23,14 @@ export function renderToStringApp() {
   return renderToString(app);
 }
 
-var app = (_ref) => {
-  var _ref$Layout = _ref.Layout,
-      Layout = _ref$Layout === undefined ? DefaultLayout : _ref$Layout,
-      layoutProps = _ref.layoutProps,
-      App = _ref.App,
-      appProps = _ref.appProps,
-      View = _ref.View,
-      props = _ref.props;
-
+var app = function app({
+  Layout = DefaultLayout,
+  layoutProps,
+  App,
+  appProps,
+  View,
+  props
+}) {
   var content = renderToStringApp(App, appProps, View, props);
   var helmet = Helmet.rewind();
   return React.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps));

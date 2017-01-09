@@ -9,9 +9,7 @@ var PropsType = _t.interface({
   error: _t.Any
 }, 'PropsType');
 
-export default ((_ref) => {
-  var error = _ref.error;
-
+export default (function redBoxWrapperJsx({ error }) {
   _assert({
     error
   }, PropsType, '{ error }');

@@ -12,9 +12,7 @@ var _index = require('./index');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = (_ref) => {
-  let helmet = _ref.helmet,
-      content = _ref.content;
+exports.default = function defaultLayoutJsx({ helmet, content }) {
   return _react2.default.createElement(
     _index.Html,
     { helmet: helmet },

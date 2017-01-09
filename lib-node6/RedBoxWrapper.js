@@ -14,9 +14,7 @@ var _redboxReact2 = _interopRequireDefault(_redboxReact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = (_ref) => {
-  let error = _ref.error;
-
+exports.default = function redBoxWrapperJsx({ error }) {
   if (error) {
     // eslint-disable-next-line no-console
     console.error(error.message || error, error.stack);

@@ -14,7 +14,7 @@ export default class App extends Component {
 App.propTypes = {
   children: PropTypes.node.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  context: PropTypes.object
+  context: PropTypes.object.isRequired
 };
 App.childContextTypes = {
   context: PropTypes.object.isRequired

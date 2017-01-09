@@ -13,9 +13,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 /* eslint-disable jsx-a11y/html-has-lang */
-exports.default = (_ref) => {
-  let children = _ref.children,
-      otherProps = _objectWithoutProperties(_ref, ['children']);
+exports.default = function bodyJsx(_ref) {
+  let { children } = _ref;
+
+  let otherProps = _objectWithoutProperties(_ref, ['children']);
 
   return _react2.default.createElement(
     'body',

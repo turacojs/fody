@@ -11,14 +11,7 @@ import _App from './App';
 export { _App as App };
 
 
-export default function render(_ref) {
-  var _ref$App = _ref.App,
-      App = _ref$App === undefined ? DefaultApp : _ref$App,
-      appProps = _ref.appProps,
-      View = _ref.View,
-      props = _ref.props,
-      element = _ref.element;
-
+export default function render({ App = DefaultApp, appProps, View, props, element }) {
   var app = React.createElement(
     App,
     appProps,

@@ -1,30 +1,28 @@
 var _jsxFileName = 'layout/DefaultLayout.jsx',
-    _this = this;
+    _this = this,
+    _arguments = arguments;
 
 import React from 'react';
 import _t from 'tcomb-forked';
 import { ReactElementType, LayoutPropsType } from '../types';
 import { Html, Head, Body } from './index';
 
-export default ((_ref) => {
-  var helmet = _ref.helmet,
-      content = _ref.content;
-
+export default (function defaultLayoutJsx({ helmet, content }) {
   _assert({
     helmet,
     content
   }, LayoutPropsType, '{ helmet, content }');
 
-  return _assert((() => {
+  return _assert(function () {
     return React.createElement(
       Html,
-      { helmet: helmet, __self: _this,
+      { helmet: helmet, __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 5
         }
       },
-      React.createElement(Head, { helmet: helmet, __self: _this,
+      React.createElement(Head, { helmet: helmet, __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 6
@@ -33,13 +31,13 @@ export default ((_ref) => {
       React.createElement(
         Body,
         {
-          __self: _this,
+          __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 7
           }
         },
-        React.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: content }, __self: _this,
+        React.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: content }, __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 8
@@ -47,7 +45,7 @@ export default ((_ref) => {
         })
       )
     );
-  })(), ReactElementType, 'return value');
+  }.apply(_this, _arguments), ReactElementType, 'return value');
 });
 
 function _assert(x, type, name) {

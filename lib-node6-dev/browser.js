@@ -13,7 +13,7 @@ var _reactDom = require('react-dom');
 
 Object.defineProperty(exports, 'unmountComponentAtNode', {
   enumerable: true,
-  get: function get() {
+  get: function () {
     return _reactDom.unmountComponentAtNode;
   }
 });
@@ -43,14 +43,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.Helmet = _reactHelmet2.default;
 exports.App = _App3.default;
-function render(_ref) {
-  var _ref$App = _ref.App;
-  let App = _ref$App === undefined ? _App3.default : _ref$App,
-      appProps = _ref.appProps,
-      View = _ref.View,
-      props = _ref.props,
-      element = _ref.element;
-
+function render({ App = _App3.default, appProps, View, props, element }) {
   let app = _react2.default.createElement(
     App,
     _extends({}, appProps, {

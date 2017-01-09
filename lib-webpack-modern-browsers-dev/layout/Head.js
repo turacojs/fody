@@ -1,7 +1,8 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _jsxFileName = 'layout/Head.jsx',
-    _this = this;
+    _this = this,
+    _arguments = arguments;
 
 import React from 'react';
 import _t from 'tcomb-forked';
@@ -16,10 +17,10 @@ export var PropsType = _t.interface({
   children: ReactNodeType
 }, 'PropsType');
 
-export default ((_ref) => {
-  var helmet = _ref.helmet,
-      children = _ref.children,
-      otherProps = _objectWithoutProperties(_ref, ['helmet', 'children']);
+export default (function headJsx(_ref) {
+  var { helmet, children } = _ref;
+
+  var otherProps = _objectWithoutProperties(_ref, ['helmet', 'children']);
 
   _assert({
     helmet,
@@ -27,11 +28,11 @@ export default ((_ref) => {
     otherProps
   }, PropsType, '{ helmet, children, ...otherProps }');
 
-  return _assert((() => {
+  return _assert(function () {
     return React.createElement(
       'head',
       _extends({}, otherProps, {
-        __self: _this,
+        __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 10
@@ -45,7 +46,7 @@ export default ((_ref) => {
       helmet.style.toComponent(),
       helmet.script.toComponent()
     );
-  })(), ReactElementType, 'return value');
+  }.apply(_this, _arguments), ReactElementType, 'return value');
 });
 
 function _assert(x, type, name) {

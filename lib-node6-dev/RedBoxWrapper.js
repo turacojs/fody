@@ -23,11 +23,7 @@ const PropsType = _tcombForked2.default.interface({
   error: _tcombForked2.default.Any
 }, 'PropsType');
 
-exports.default = (_ref) => {
-  var _assert2 = _assert(_ref, PropsType, '{ error }');
-
-  let error = _assert2.error;
-
+exports.default = function redBoxWrapperJsx({ error }) {
   _assert({
     error
   }, PropsType, '{ error }');

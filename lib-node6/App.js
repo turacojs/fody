@@ -20,7 +20,7 @@ exports.default = App;
 App.propTypes = {
   children: _react.PropTypes.node.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  context: _react.PropTypes.object
+  context: _react.PropTypes.object.isRequired
 };
 App.childContextTypes = {
   context: _react.PropTypes.object.isRequired

@@ -13,19 +13,19 @@ var _layout = require('./layout');
 
 Object.defineProperty(exports, 'Html', {
   enumerable: true,
-  get: function get() {
+  get: function () {
     return _layout.Html;
   }
 });
 Object.defineProperty(exports, 'Head', {
   enumerable: true,
-  get: function get() {
+  get: function () {
     return _layout.Head;
   }
 });
 Object.defineProperty(exports, 'Body', {
   enumerable: true,
-  get: function get() {
+  get: function () {
     return _layout.Body;
   }
 });
@@ -60,11 +60,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.Helmet = _reactHelmet2.default;
 exports.App = _App3.default;
-function renderToStringApp() {
-  let App = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _App3.default;
-  let appProps = arguments[1];
-  let View = arguments[2];
-  let props = arguments[3];
+function renderToStringApp(App = _App3.default, appProps, View, props) {
   return _assert(function () {
     const app = _react2.default.createElement(
       App,
@@ -87,14 +83,14 @@ function renderToStringApp() {
   }.apply(this, arguments), _tcombForked2.default.String, 'return value');
 }
 
-const app = (_ref) => {
-  var _ref$Layout = _ref.Layout;
-  let Layout = _ref$Layout === undefined ? _DefaultLayout2.default : _ref$Layout,
-      layoutProps = _ref.layoutProps,
-      App = _ref.App,
-      appProps = _ref.appProps,
-      View = _ref.View,
-      props = _ref.props;
+const app = ({
+  Layout = _DefaultLayout2.default,
+  layoutProps,
+  App,
+  appProps,
+  View,
+  props
+}) => {
   return _assert((() => {
     const content = renderToStringApp(App, appProps, View, props);
     const helmet = _reactHelmet2.default.rewind();
