@@ -1,3 +1,9 @@
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/turacojs/fody/compare/v6.1.0...v6.2.0) (2017-01-09)
+
+update dependencies
+
+
 ### v6.1.0
 
 - [`8cb32d6`](https://github.com/turacojs/fody/commit/8cb32d6c4835a247c0511314882b97732b9b75fc) chore(package): eslint-config-pob@^9.0.1 (Christophe Hurpeau)
