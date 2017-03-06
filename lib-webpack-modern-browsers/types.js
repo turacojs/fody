@@ -1,16 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
-// import { REACT_ELEMENT_TYPE } from 'react/lib/ReactElement';
-//
-// export type ReactElement = {
-//   $$typeof: REACT_ELEMENT_TYPE,
-// }
-import t from 'tcomb-forked';
+import t from 'flow-runtime';
 import { isValidElement } from 'react';
 
-export var ReactElementType = t.irreducible('ReactElement', isValidElement);
-export var ReactNodeType = t.declare('ReactNode');
+export const ReactElementType = t.refinement(t.object(), function (input) {
+  if (!isValidElement(input)) return 'not a valid react element';
+});
 
-// recursive type
-// https://github.com/gcanti/tcomb/commit/a7c9cd347dd029d33af828712ec18d6bf5a80ba8
-ReactNodeType.define(t.union([t.Nil, t.String, t.Number, ReactElementType, t.list(ReactNodeType)]));
+export const ReactNodeType = t.type('React$Node', function (ReactNodeType) {
+  return t.union(t.null(), t.void(), t.string(), t.number(), ReactElementType, t.array(ReactNodeType));
+});
 //# sourceMappingURL=types.js.map

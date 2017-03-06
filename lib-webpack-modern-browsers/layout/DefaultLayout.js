@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Html, Head, Body } from './index';
 
-export default (function defaultLayoutJsx({ helmet, content }) {
+export default (function ({ helmet, content }) {
   return React.createElement(
     Html,
     { helmet: helmet },

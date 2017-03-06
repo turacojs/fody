@@ -1,7 +1,7 @@
 import React from 'react';
 import RedBox from 'redbox-react';
 
-export default (function redBoxWrapperJsx(_ref) {
+export default (function (_ref) {
   var error = _ref.error;
 
   if (error) {

@@ -15,7 +15,7 @@ export { _App as App };
 export { Html, Head, Body } from './layout';
 
 export function renderToStringApp(App = DefaultApp, appProps, View, props) {
-  var app = React.createElement(
+  const app = React.createElement(
     App,
     appProps,
     React.createElement(View, props)
@@ -23,7 +23,7 @@ export function renderToStringApp(App = DefaultApp, appProps, View, props) {
   return renderToString(app);
 }
 
-var app = function app({
+const app = function app({
   Layout = DefaultLayout,
   layoutProps,
   App,
@@ -31,12 +31,12 @@ var app = function app({
   View,
   props
 }) {
-  var content = renderToStringApp(App, appProps, View, props);
-  var helmet = Helmet.rewind();
+  const content = renderToStringApp(App, appProps, View, props);
+  const helmet = Helmet.rewind();
   return React.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps));
 };
 
 export default function render(options) {
-  return `<!doctype html>\n${ renderToStaticMarkup(app(options)) }`;
+  return `<!doctype html>\n${renderToStaticMarkup(app(options))}`;
 }
 //# sourceMappingURL=index.js.map

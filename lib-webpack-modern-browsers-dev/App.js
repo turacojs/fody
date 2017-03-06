@@ -1,45 +1,31 @@
-import _t from 'tcomb-forked';
-import { Component, PropTypes } from 'react';
-import { ReactNodeType } from './types';
+var _class, _temp;
 
-export default class App extends Component {
+import { Component, PropTypes } from 'react';
+import { ReactNodeType as _ReactNodeType } from './types';
+
+import t from 'flow-runtime';
+const ReactNodeType = t.tdz(function () {
+  return _ReactNodeType;
+});
+let App = (_temp = _class = class extends Component {
 
   getChildContext() {
-    return _assert(function () {
-      return { context: this.props.context };
-    }.apply(this, arguments), _t.Object, 'return value');
+    const _returnType = t.return(t.object());
+
+    return _returnType.assert({ context: this.props.context });
   }
 
   render() {
-    return _assert(function () {
-      return this.props.children;
-    }.apply(this, arguments), ReactNodeType, 'return value');
+    const _returnType2 = t.return(t.ref(ReactNodeType));
+
+    return _returnType2.assert(this.props.children);
   }
-}
-App.propTypes = {
+}, _class.propTypes = {
   children: PropTypes.node.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   context: PropTypes.object.isRequired
-};
-App.childContextTypes = {
+}, _class.childContextTypes = {
   context: PropTypes.object.isRequired
-};
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
-  }
-
-  if (_t.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
-
-      _t.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _t.fail(message());
-  }
-
-  return x;
-}
+}, _temp);
+export { App as default };
 //# sourceMappingURL=App.js.map

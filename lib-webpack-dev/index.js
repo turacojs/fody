@@ -3,15 +3,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _jsxFileName = 'index.jsx',
     _this = this;
 
-import _t from 'tcomb-forked';
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Helmet from 'react-helmet';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import DefaultApp from './App';
 import DefaultLayout from './layout/DefaultLayout';
-import { ReactElementType } from './types';
+import { ReactElementType as _ReactElementType } from './types';
 
+import t from 'flow-runtime';
+var ReactElementType = t.tdz(function () {
+  return _ReactElementType;
+});
 export { Helmet };
 import _App from './App';
 export { _App as App };
@@ -23,26 +26,27 @@ export function renderToStringApp() {
   var appProps = arguments[1];
   var View = arguments[2];
   var props = arguments[3];
-  return _assert(function () {
-    var app = React.createElement(
-      App,
-      _extends({}, appProps, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 14
-        }
-      }),
-      React.createElement(View, _extends({}, props, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 14
-        }
-      }))
-    );
-    return renderToString(app);
-  }.apply(this, arguments), _t.String, 'return value');
+
+  var _returnType = t.return(t.string());
+
+  var app = React.createElement(
+    App,
+    _extends({}, appProps, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      }
+    }),
+    React.createElement(View, _extends({}, props, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      }
+    }))
+  );
+  return _returnType.assert(renderToString(app));
 }
 
 var app = function app(_ref) {
@@ -53,38 +57,21 @@ var app = function app(_ref) {
       appProps = _ref.appProps,
       View = _ref.View,
       props = _ref.props;
-  return _assert(function () {
-    var content = renderToStringApp(App, appProps, View, props);
-    var helmet = Helmet.rewind();
-    return React.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      }
-    }));
-  }(), ReactElementType, 'return value');
+
+  var _returnType2 = t.return(t.ref(ReactElementType));
+
+  var content = renderToStringApp(App, appProps, View, props);
+  var helmet = Helmet.rewind();
+  return _returnType2.assert(React.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    }
+  })));
 };
 
 export default function render(options) {
   return '<!doctype html>\n' + renderToStaticMarkup(app(options));
-}
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
-  }
-
-  if (_t.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
-
-      _t.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _t.fail(message());
-  }
-
-  return x;
 }
 //# sourceMappingURL=index.js.map

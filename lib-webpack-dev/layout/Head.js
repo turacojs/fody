@@ -1,69 +1,51 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _jsxFileName = 'layout/Head.jsx',
-    _this = this,
-    _arguments = arguments;
+    _this = this;
 
 import React from 'react';
-import _t from 'tcomb-forked';
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 /* eslint-disable jsx-a11y/html-has-lang */
-import { ReactNodeType, ReactElementType, HelmetDataType } from '../types';
+import { ReactNodeType as _ReactNodeType, ReactElementType as _ReactElementType, HelmetDataType as _HelmetDataType } from '../types';
 
-export var PropsType = _t.interface({
-  helmet: HelmetDataType,
-  children: ReactNodeType
-}, 'PropsType');
+import t from 'flow-runtime';
+var ReactNodeType = t.tdz(function () {
+  return _ReactNodeType;
+});
+var ReactElementType = t.tdz(function () {
+  return _ReactElementType;
+});
+var HelmetDataType = t.tdz(function () {
+  return _HelmetDataType;
+});
+export var PropsType = t.type('PropsType', t.object(t.property('helmet', t.ref(HelmetDataType)), t.property('children', t.ref(ReactNodeType))));
 
-export default (function headJsx(_ref) {
+export default (function head(_ref) {
   var helmet = _ref.helmet,
       children = _ref.children,
       otherProps = _objectWithoutProperties(_ref, ['helmet', 'children']);
 
-  _assert({
-    helmet: helmet,
-    children: children,
-    otherProps: otherProps
-  }, PropsType, '{ helmet, children, ...otherProps }');
+  var _returnType = t.return(t.ref(ReactElementType));
 
-  return _assert(function () {
-    return React.createElement(
-      'head',
-      _extends({}, otherProps, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10
-        }
-      }),
-      children,
-      helmet.title.toComponent(),
-      helmet.meta.toComponent(),
-      helmet.link.toComponent(),
-      helmet.base.toComponent(),
-      helmet.style.toComponent(),
-      helmet.script.toComponent()
-    );
-  }.apply(_this, _arguments), ReactElementType, 'return value');
+  t.param('arguments[0]', PropsType).assert(arguments[0]);
+  return _returnType.assert(React.createElement(
+    'head',
+    _extends({}, otherProps, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      }
+    }),
+    children,
+    helmet.title.toComponent(),
+    helmet.meta.toComponent(),
+    helmet.link.toComponent(),
+    helmet.base.toComponent(),
+    helmet.style.toComponent(),
+    helmet.script.toComponent()
+  ));
 });
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
-  }
-
-  if (_t.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
-
-      _t.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _t.fail(message());
-  }
-
-  return x;
-}
 //# sourceMappingURL=Head.js.map

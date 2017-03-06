@@ -1,61 +1,38 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _jsxFileName = 'layout/Body.jsx',
-    _this = this,
-    _arguments = arguments;
+    _this = this;
 
 import React from 'react';
-import _t from 'tcomb-forked';
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 /* eslint-disable jsx-a11y/html-has-lang */
-import { ReactNodeType } from '../types';
+import { ReactNodeType as _ReactNodeType } from '../types';
 
-export var PropsType = _t.interface({
-  children: ReactNodeType
-}, 'PropsType');
-
-export default (function bodyJsx(_ref) {
-  var { children } = _ref;
-
-  var otherProps = _objectWithoutProperties(_ref, ['children']);
-
-  _assert({
-    children,
-    otherProps
-  }, PropsType, '{ children, ...otherProps }');
-
-  return _assert(function () {
-    return React.createElement(
-      'body',
-      _extends({}, otherProps, {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9
-        }
-      }),
-      children
-    );
-  }.apply(_this, _arguments), ReactNodeType, 'return value');
+import t from 'flow-runtime';
+const ReactNodeType = t.tdz(function () {
+  return _ReactNodeType;
 });
+export const PropsType = t.type('PropsType', t.object(t.property('children', t.ref(ReactNodeType))));
 
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
-  }
+export default (function body(_ref) {
+  let { children } = _ref,
+      otherProps = _objectWithoutProperties(_ref, ['children']);
 
-  if (_t.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
+  const _returnType = t.return(t.ref(ReactNodeType));
 
-      _t.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _t.fail(message());
-  }
-
-  return x;
-}
+  t.param('arguments[0]', PropsType).assert(arguments[0]);
+  return _returnType.assert(React.createElement(
+    'body',
+    _extends({}, otherProps, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      }
+    }),
+    children
+  ));
+});
 //# sourceMappingURL=Body.js.map

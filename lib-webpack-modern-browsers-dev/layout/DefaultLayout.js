@@ -1,68 +1,51 @@
 var _jsxFileName = 'layout/DefaultLayout.jsx',
-    _this = this,
-    _arguments = arguments;
+    _this = this;
 
 import React from 'react';
-import _t from 'tcomb-forked';
-import { ReactElementType, LayoutPropsType } from '../types';
+import { ReactElementType as _ReactElementType, LayoutPropsType as _LayoutPropsType } from '../types';
 import { Html, Head, Body } from './index';
 
-export default (function defaultLayoutJsx({ helmet, content }) {
-  _assert({
-    helmet,
-    content
-  }, LayoutPropsType, '{ helmet, content }');
+import t from 'flow-runtime';
+const ReactElementType = t.tdz(function () {
+  return _ReactElementType;
+});
+const LayoutPropsType = t.tdz(function () {
+  return _LayoutPropsType;
+});
+export default (function defaultLayout({ helmet, content }) {
+  const _returnType = t.return(t.ref(ReactElementType));
 
-  return _assert(function () {
-    return React.createElement(
-      Html,
-      { helmet: helmet, __self: this,
+  t.param('arguments[0]', t.ref(LayoutPropsType)).assert(arguments[0]);
+  return _returnType.assert(React.createElement(
+    Html,
+    { helmet: helmet, __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5
+      }
+    },
+    React.createElement(Head, { helmet: helmet, __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      }
+    }),
+    React.createElement(
+      Body,
+      {
+        __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 5
+          lineNumber: 7
         }
       },
-      React.createElement(Head, { helmet: helmet, __self: this,
+      React.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: content }, __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 6
+          lineNumber: 8
         }
-      }),
-      React.createElement(
-        Body,
-        {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 7
-          }
-        },
-        React.createElement('div', { id: 'app', dangerouslySetInnerHTML: { __html: content }, __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 8
-          }
-        })
-      )
-    );
-  }.apply(_this, _arguments), ReactElementType, 'return value');
+      })
+    )
+  ));
 });
-
-function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _t.stringify(x) + ' supplied to ' + name + ' (expected a ' + _t.getTypeName(type) + ')';
-  }
-
-  if (_t.isType(type)) {
-    if (!type.is(x)) {
-      type(x, [name + ': ' + _t.getTypeName(type)]);
-
-      _t.fail(message());
-    }
-  } else if (!(x instanceof type)) {
-    _t.fail(message());
-  }
-
-  return x;
-}
 //# sourceMappingURL=DefaultLayout.js.map
