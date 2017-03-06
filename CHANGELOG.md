@@ -1,3 +1,17 @@
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/turacojs/fody/compare/v6.2.0...v7.0.0) (2017-03-06)
+
+
+### Features
+
+* pob upgrade ([c08662d](https://github.com/turacojs/fody/commit/c08662d))
+
+
+### BREAKING CHANGES
+
+* use flow-runtime instead of tcomb
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/turacojs/fody/compare/v6.1.0...v6.2.0) (2017-01-09)
 
