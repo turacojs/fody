@@ -1,3 +1,12 @@
+<a name="7.1.0"></a>
+# [7.1.0](https://github.com/turacojs/fody/compare/v7.0.0...v7.1.0) (2017-03-09)
+
+
+### Features
+
+* pob upgrade ([bb72c81](https://github.com/turacojs/fody/commit/bb72c81))
+
+
 <a name="7.0.0"></a>
 # [7.0.0](https://github.com/turacojs/fody/compare/v6.2.0...v7.0.0) (2017-03-06)
 
