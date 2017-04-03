@@ -96,7 +96,7 @@ const app = ({
   const _returnType2 = _flowRuntime2.default.return(_flowRuntime2.default.ref(ReactElementType));
 
   const content = renderToStringApp(App, appProps, View, props);
-  const helmet = _reactHelmet2.default.rewind();
+  const helmet = _reactHelmet2.default.renderStatic();
   return _returnType2.assert(_react2.default.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps, {
     __self: undefined,
     __source: {

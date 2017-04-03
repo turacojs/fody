@@ -12,13 +12,13 @@ var ReactElementType = t.tdz(function () {
 var LayoutPropsType = t.tdz(function () {
   return _LayoutPropsType;
 });
-export default (function defaultLayout(_ref) {
-  var helmet = _ref.helmet,
-      content = _ref.content;
-
+export default (function defaultLayout(_arg) {
   var _returnType = t.return(t.ref(ReactElementType));
 
-  t.param('arguments[0]', t.ref(LayoutPropsType)).assert(arguments[0]);
+  var _t$ref$assert = t.ref(LayoutPropsType).assert(_arg),
+      helmet = _t$ref$assert.helmet,
+      content = _t$ref$assert.content;
+
   return _returnType.assert(React.createElement(
     Html,
     { helmet: helmet, __self: _this,

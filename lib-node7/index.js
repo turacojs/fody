@@ -71,7 +71,7 @@ const app = ({
   props
 }) => {
   const content = renderToStringApp(App, appProps, View, props);
-  const helmet = _reactHelmet2.default.rewind();
+  const helmet = _reactHelmet2.default.renderStatic();
   return _react2.default.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps));
 };
 

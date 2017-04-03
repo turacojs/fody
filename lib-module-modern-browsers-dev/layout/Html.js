@@ -20,16 +20,16 @@ const HelmetDataType = t.tdz(function () {
 const PropsType = t.type('PropsType', t.object(t.property('helmet', t.ref(HelmetDataType)), t.property('children', t.ref(ReactNodeType))));
 
 
-export default (function html(_ref) {
-  let {
-    helmet,
-    children
-  } = _ref,
-      otherProps = _objectWithoutProperties(_ref, ['helmet', 'children']);
-
+export default (function html(_arg) {
   const _returnType = t.return(t.ref(ReactNodeType));
 
-  t.param('arguments[0]', PropsType).assert(arguments[0]);
+  let _PropsType$assert = PropsType.assert(_arg),
+      {
+    helmet,
+    children
+  } = _PropsType$assert,
+      otherProps = _objectWithoutProperties(_PropsType$assert, ['helmet', 'children']);
+
   return _returnType.assert(React.createElement(
     'html',
     _extends({}, helmet.htmlAttributes.toComponent(), otherProps, {

@@ -38,7 +38,7 @@ var app = function app(_ref) {
       props = _ref.props;
 
   var content = renderToStringApp(App, appProps, View, props);
-  var helmet = Helmet.rewind();
+  var helmet = Helmet.renderStatic();
   return React.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps));
 };
 

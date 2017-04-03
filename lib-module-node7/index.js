@@ -32,7 +32,7 @@ const app = ({
   props
 }) => {
   const content = renderToStringApp(App, appProps, View, props);
-  const helmet = Helmet.rewind();
+  const helmet = Helmet.renderStatic();
   return React.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps));
 };
 

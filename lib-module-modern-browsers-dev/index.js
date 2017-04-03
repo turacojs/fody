@@ -55,7 +55,7 @@ const app = function app({
   const _returnType2 = t.return(t.ref(ReactElementType));
 
   const content = renderToStringApp(App, appProps, View, props);
-  const helmet = Helmet.rewind();
+  const helmet = Helmet.renderStatic();
   return _returnType2.assert(React.createElement(Layout, _extends({ helmet: helmet, content: content }, layoutProps, {
     __self: _this,
     __source: {

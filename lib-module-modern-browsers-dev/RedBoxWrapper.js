@@ -8,8 +8,8 @@ import t from 'flow-runtime';
 const PropsType = t.type('PropsType', t.object(t.property('error', t.any())));
 
 
-export default (function redBoxWrapper({ error }) {
-  t.param('arguments[0]', PropsType).assert(arguments[0]);
+export default (function redBoxWrapper(_arg) {
+  let { error } = PropsType.assert(_arg);
 
   if (error) {
     // eslint-disable-next-line no-console

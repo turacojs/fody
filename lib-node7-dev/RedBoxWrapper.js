@@ -21,8 +21,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const PropsType = _flowRuntime2.default.type('PropsType', _flowRuntime2.default.object(_flowRuntime2.default.property('error', _flowRuntime2.default.any())));
 
-exports.default = function redBoxWrapper({ error }) {
-  _flowRuntime2.default.param('arguments[0]', PropsType).assert(arguments[0]);
+exports.default = function redBoxWrapper(_arg) {
+  let { error } = PropsType.assert(_arg);
 
   if (error) {
     // eslint-disable-next-line no-console

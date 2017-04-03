@@ -8,10 +8,10 @@ import { Html, Head, Body } from './index';
 import t from 'flow-runtime';
 const ReactElementType = t.tdz(() => _ReactElementType);
 const LayoutPropsType = t.tdz(() => _LayoutPropsType);
-export default (function defaultLayout({ helmet, content }) {
+export default (function defaultLayout(_arg) {
   const _returnType = t.return(t.ref(ReactElementType));
 
-  t.param('arguments[0]', t.ref(LayoutPropsType)).assert(arguments[0]);
+  let { helmet, content } = t.ref(LayoutPropsType).assert(_arg);
   return _returnType.assert(React.createElement(
     Html,
     { helmet: helmet, __self: _this,

@@ -16,13 +16,13 @@ var ReactNodeType = t.tdz(function () {
 });
 export var PropsType = t.type('PropsType', t.object(t.property('children', t.ref(ReactNodeType))));
 
-export default (function body(_ref) {
-  var children = _ref.children,
-      otherProps = _objectWithoutProperties(_ref, ['children']);
-
+export default (function body(_arg) {
   var _returnType = t.return(t.ref(ReactNodeType));
 
-  t.param('arguments[0]', PropsType).assert(arguments[0]);
+  var _PropsType$assert = PropsType.assert(_arg),
+      children = _PropsType$assert.children,
+      otherProps = _objectWithoutProperties(_PropsType$assert, ['children']);
+
   return _returnType.assert(React.createElement(
     'body',
     _extends({}, otherProps, {

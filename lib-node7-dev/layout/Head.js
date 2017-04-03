@@ -32,13 +32,12 @@ const HelmetDataType = _flowRuntime2.default.tdz(() => _types.HelmetDataType);
 
 const PropsType = exports.PropsType = _flowRuntime2.default.type('PropsType', _flowRuntime2.default.object(_flowRuntime2.default.property('helmet', _flowRuntime2.default.ref(HelmetDataType)), _flowRuntime2.default.property('children', _flowRuntime2.default.ref(ReactNodeType))));
 
-exports.default = function head(_ref) {
-  let { helmet, children } = _ref,
-      otherProps = _objectWithoutProperties(_ref, ['helmet', 'children']);
-
+exports.default = function head(_arg) {
   const _returnType = _flowRuntime2.default.return(_flowRuntime2.default.ref(ReactElementType));
 
-  _flowRuntime2.default.param('arguments[0]', PropsType).assert(arguments[0]);
+  let _PropsType$assert = PropsType.assert(_arg),
+      { helmet, children } = _PropsType$assert,
+      otherProps = _objectWithoutProperties(_PropsType$assert, ['helmet', 'children']);
 
   return _returnType.assert(_react2.default.createElement(
     'head',

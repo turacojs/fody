@@ -23,10 +23,10 @@ const ReactElementType = _flowRuntime2.default.tdz(() => _types.ReactElementType
 
 const LayoutPropsType = _flowRuntime2.default.tdz(() => _types.LayoutPropsType);
 
-exports.default = function defaultLayout({ helmet, content }) {
+exports.default = function defaultLayout(_arg) {
   const _returnType = _flowRuntime2.default.return(_flowRuntime2.default.ref(ReactElementType));
 
-  _flowRuntime2.default.param('arguments[0]', _flowRuntime2.default.ref(LayoutPropsType)).assert(arguments[0]);
+  let { helmet, content } = _flowRuntime2.default.ref(LayoutPropsType).assert(_arg);
 
   return _returnType.assert(_react2.default.createElement(
     _index.Html,
