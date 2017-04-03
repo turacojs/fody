@@ -1,3 +1,9 @@
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/turacojs/fody/compare/v7.1.0...v7.2.0) (2017-04-03)
+
+pob upgrade and update helmet to 5.0.2
+
+
 <a name="7.1.0"></a>
 # [7.1.0](https://github.com/turacojs/fody/compare/v7.0.0...v7.1.0) (2017-03-09)
 
