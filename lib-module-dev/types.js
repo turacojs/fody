@@ -1,5 +1,5 @@
 import t from 'flow-runtime';
-import { isValidElement } from 'react';
+import { isValidElement, Component } from 'react';
 
 export var ReactElementType = t.refinement(t.object(), function (input) {
   if (!isValidElement(input)) return 'not a valid react element';
@@ -8,6 +8,12 @@ export var ReactElementType = t.refinement(t.object(), function (input) {
 export var ReactNodeType = t.type('React$Node', function (ReactNodeType) {
   return t.union(t.null(), t.void(), t.string(), t.number(), ReactElementType, t.array(ReactNodeType));
 });
+
+export var TagNameType = t.type('TagNameType', t.string());
+export var ReactClassComponentType = t.type('ReactClassComponentType', t.ref(Component));
+export var ReactStatelessComponentType = t.type('ReactStatelessComponentType', t.function(t.param('props', t.object()), t.return(t.ref(ReactNodeType))));
+
+export var TagNameOrReactComponentType = t.type('TagNameOrReactComponentType', t.union(TagNameType, ReactClassComponentType, ReactStatelessComponentType));
 
 export var HelmetDataAttributeType = t.type('HelmetDataAttributeType', t.object(t.property('toString', t.function(t.return(t.string()))), t.property('toComponent', t.function(t.return(t.ref(ReactElementType))))));
 

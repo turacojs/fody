@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.LayoutPropsType = exports.HelmetDataType = exports.HelmetDataAttributeType = exports.ReactNodeType = exports.ReactElementType = undefined;
+exports.LayoutPropsType = exports.HelmetDataType = exports.HelmetDataAttributeType = exports.TagNameOrReactComponentType = exports.ReactStatelessComponentType = exports.ReactClassComponentType = exports.TagNameType = exports.ReactNodeType = exports.ReactElementType = undefined;
 
 var _flowRuntime = require('flow-runtime');
 
@@ -18,6 +18,14 @@ const ReactElementType = exports.ReactElementType = _flowRuntime2.default.refine
 });
 
 const ReactNodeType = exports.ReactNodeType = _flowRuntime2.default.type('React$Node', ReactNodeType => _flowRuntime2.default.union(_flowRuntime2.default.null(), _flowRuntime2.default.void(), _flowRuntime2.default.string(), _flowRuntime2.default.number(), ReactElementType, _flowRuntime2.default.array(ReactNodeType)));
+
+const TagNameType = exports.TagNameType = _flowRuntime2.default.type('TagNameType', _flowRuntime2.default.string());
+
+const ReactClassComponentType = exports.ReactClassComponentType = _flowRuntime2.default.type('ReactClassComponentType', _flowRuntime2.default.ref(_react.Component));
+
+const ReactStatelessComponentType = exports.ReactStatelessComponentType = _flowRuntime2.default.type('ReactStatelessComponentType', _flowRuntime2.default.function(_flowRuntime2.default.param('props', _flowRuntime2.default.object()), _flowRuntime2.default.return(_flowRuntime2.default.ref(ReactNodeType))));
+
+const TagNameOrReactComponentType = exports.TagNameOrReactComponentType = _flowRuntime2.default.type('TagNameOrReactComponentType', _flowRuntime2.default.union(TagNameType, ReactClassComponentType, ReactStatelessComponentType));
 
 const HelmetDataAttributeType = exports.HelmetDataAttributeType = _flowRuntime2.default.type('HelmetDataAttributeType', _flowRuntime2.default.object(_flowRuntime2.default.property('toString', _flowRuntime2.default.function(_flowRuntime2.default.return(_flowRuntime2.default.string()))), _flowRuntime2.default.property('toComponent', _flowRuntime2.default.function(_flowRuntime2.default.return(_flowRuntime2.default.ref(ReactElementType))))));
 

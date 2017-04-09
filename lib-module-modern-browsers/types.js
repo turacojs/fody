@@ -1,5 +1,5 @@
 import t from 'flow-runtime';
-import { isValidElement } from 'react';
+import { isValidElement, Component } from 'react';
 
 export const ReactElementType = t.refinement(t.object(), function (input) {
   if (!isValidElement(input)) return 'not a valid react element';
