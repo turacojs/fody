@@ -1,3 +1,12 @@
+<a name="7.3.0"></a>
+# [7.3.0](https://github.com/turacojs/fody/compare/v7.2.0...v7.3.0) (2017-04-09)
+
+
+### Features
+
+* ReactStatelessComponentType ([2c5642e](https://github.com/turacojs/fody/commit/2c5642e))
+
+
 <a name="7.2.0"></a>
 # [7.2.0](https://github.com/turacojs/fody/compare/v7.1.0...v7.2.0) (2017-04-03)
 
